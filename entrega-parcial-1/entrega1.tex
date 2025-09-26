@@ -1,0 +1,113 @@
+%% ===================================================================
+%% CLASSE DE DOCUMENTO E PACOTE DE ESTILO UNOESC
+%% ===================================================================
+\documentclass[
+  article,      % Tipo de documento
+  a4paper,      % Tamanho do papel (ABNT)
+  12pt,         % Tamanho da fonte (ABNT)
+  oneside,      % Impressão em um lado
+  fleqn         % Alinhamento de equações à esquerda
+]{abntex2}
+
+%% --- Pacote de estilo da UNOESC ---
+% Carrega todas as configurações de margens, fontes, cores e referências.
+% ABNTNum=brkt: Ativa o estilo numérico com colchetes [1]
+\usepackage[ABNTNum=brkt]{unoesc-article}
+
+%% --- Arquivo de referências ---
+% As suas referências bibliográficas devem ser adicionadas neste arquivo.
+\addbibresource{unoesc-article.bib}
+
+%% ===================================================================
+%% INFORMAÇÕES DO TRABALHO
+%% ===================================================================
+\titulo{PROPOSTA DE UM SISTEMA INTELIGENTE PARA BUSCA E COMPARAÇÃO DE PREÇOS DE PRODUTOS DA CESTA BÁSICA}
+
+% --- Autores e Orientador ---
+% As afiliações e contatos são adicionados com \thanks, \affil e \email
+\autor{
+  Alexandre Reitemeyer\thanks{\affil{Curso de Sistemas de Informação, UNOESC, Chapecó}\sep\email{aluno1@edu.unoesc.br}} \and
+  Angelo Pandolfo Antonini\thanks{\affil{Curso de Sistemas de Informação, UNOESC, Chapecó}\sep\email{aluno2@edu.unoesc.br}} \and
+  Jessé Chaves\thanks{\affil{Curso de Sistemas de Informação, UNOESC, Chapecó}\sep\email{aluno3@edu.unoesc.br}} \and
+  Lucas Santos Magro\thanks{\affil{Curso de Sistemas de Informação, UNOESC, Chapecó}\sep\email{aluno4@edu.unoesc.br}} \and
+  Prof. Jacson Luiz Matte\thanks{\affil{Orientador; Curso de Sistemas de Informação, UNOESC, Chapecó}\sep\email{jacson.matte@unoesc.edu.br}}
+}
+
+% --- Data ---
+\data{Chapecó, 26 de setembro de 2025}
+
+%% ===================================================================
+%% INÍCIO DO DOCUMENTO
+%% ===================================================================
+\begin{document}
+
+% --- Elementos pré-textuais (Capa, Resumo) ---
+\pretextual
+
+\begin{paginadetitulo}
+    \begin{ambienteresumo}
+        Este trabalho propõe o desenvolvimento de uma solução computacional — composta por um aplicativo e um site — que visa simplificar e automatizar a busca por produtos da cesta básica. Utilizando recursos de inteligência artificial, o sistema permitirá ao usuário pesquisar ou escanear produtos de seu interesse, recebendo uma análise comparativa de preços e estabelecimentos. A plataforma classificará as opções com base em múltiplos critérios, como preço, distância e avaliações de outros usuários, oferecendo uma ferramenta poderosa para a tomada de decisão, promovendo economia de tempo e dinheiro.
+        \palavraschave{Cesta Básica. Comparação de Preços. Inteligência Artificial. Aplicativo Móvel.}
+    \end{ambienteresumo}
+\end{paginadetitulo}
+
+% --- Início do conteúdo textual do trabalho ---
+\textual
+\newpage
+
+%% ===================================================================
+%% SEÇÃO DE INTRODUÇÃO
+%% ===================================================================
+\section{Introdução}
+
+O custo de vida é uma preocupação constante para as famílias brasileiras, sendo a aquisição de itens da cesta básica uma das despesas mais significativas no orçamento mensal. Em um cenário econômico de flutuação de preços e ampla variedade de estabelecimentos comerciais, tanto físicos quanto online, a tarefa de encontrar os melhores preços para produtos essenciais pode ser complexa e demorada. Os consumidores frequentemente gastam um tempo considerável pesquisando em diferentes supermercados, comparando ofertas e calculando a melhor opção de compra para maximizar sua economia.
+
+Com o avanço da tecnologia e a crescente digitalização dos serviços, surgem oportunidades para otimizar processos cotidianos. O uso de aplicativos móveis e plataformas web para compras tornou-se comum, porém, poucas soluções integram de forma eficiente a busca e comparação de preços de produtos essenciais em um único ambiente, especialmente com foco regional e com o auxílio de tecnologias emergentes.
+
+Nesse contexto, este trabalho propõe o desenvolvimento de uma solução computacional — composta por um aplicativo e um site — que visa simplificar e automatizar a busca por produtos da cesta básica. Utilizando recursos de inteligência artificial, o sistema permitirá ao usuário pesquisar ou escanear produtos de seu interesse, recebendo uma análise comparativa de preços e estabelecimentos. A plataforma classificará as opções com base em múltiplos critérios, como preço, distância, acessibilidade e avaliações de outros usuários, oferecendo uma ferramenta poderosa para a tomada de decisão, promovendo economia de tempo e dinheiro.
+
+%% ===================================================================
+%% SEÇÃO DE DELIMITAÇÃO DO TEMA E JUSTIFICATIVA
+%% ===================================================================
+\section{Delimitação do Tema e Justificativa}
+
+\subsection{Delimitação do Tema}
+
+O presente estudo concentra-se no desenvolvimento de um sistema de software, abrangendo uma plataforma web e um aplicativo móvel, destinado à busca e comparação de preços de produtos que compõem a cesta básica brasileira.
+
+O escopo do projeto inclui:
+\begin{itemize}
+    \item A criação de uma interface que permita ao usuário buscar produtos por nome ou através do escaneamento de seu código de barras.
+    \item A implementação de um algoritmo de inteligência artificial para coletar, processar e classificar dados de preços de diferentes fontes, incluindo estabelecimentos comerciais locais e plataformas de e-commerce.
+    \item A apresentação dos resultados ao usuário de forma organizada, com base em critérios personalizáveis como menor preço, menor distância, melhor avaliação e acessibilidade do estabelecimento.
+\end{itemize}
+
+O projeto não abrangerá o desenvolvimento do sistema de e-commerce em si, ou seja, não incluirá funcionalidades de pagamento, logística de entrega ou gerenciamento de estoque dos estabelecimentos. O foco é estritamente na disponibilização de informações para auxiliar o consumidor em sua decisão de compra.
+
+\subsection{Justificativa}
+
+A relevância deste projeto pode ser analisada sob três perspectivas principais: econômica, social e tecnológica.
+
+Do ponto de vista \textbf{econômico}, a plataforma oferece um benefício direto ao consumidor. Em um país onde a inflação dos alimentos impacta significativamente o poder de compra, uma ferramenta que facilita a economia em itens essenciais tem grande valor prático. Ao otimizar o processo de compra, o sistema contribui para uma melhor gestão do orçamento familiar.
+
+Na esfera \textbf{social}, o projeto promove o consumo consciente e a democratização do acesso à informação. Ele capacita o consumidor a tomar decisões mais informadas, fomentando a competitividade entre os estabelecimentos comerciais e, potencialmente, levando a uma maior transparência de preços no mercado local. Além disso, a inclusão de critérios como acessibilidade nos estabelecimentos agrega um valor social importante.
+
+Sob o aspecto \textbf{tecnológico}, o trabalho se destaca pela aplicação de inteligência artificial em um problema cotidiano e de grande alcance. A integração de busca inteligente, processamento de dados em tempo real e geolocalização em uma plataforma unificada representa uma inovação no setor de aplicativos de comparação de preços. O desenvolvimento desta solução contribui para a exploração de novas tecnologias na resolução de desafios práticos da sociedade.
+
+%% ===================================================================
+%% SEÇÃO DE OBJETIVO GERAL
+%% ===================================================================
+\section{Objetivo Geral}
+
+Desenvolver uma plataforma computacional, composta por um aplicativo móvel e um website, que utilize inteligência artificial para auxiliar os usuários na busca e comparação de preços de produtos da cesta básica, classificando estabelecimentos físicos e online com base em critérios como preço, distância e avaliações, a fim de otimizar a economia e o tempo do consumidor no processo de compras.
+
+%% ===================================================================
+%% ELEMENTOS PÓS-TEXTUAIS (REFERÊNCIAS)
+%% ===================================================================
+\postextual
+\printbibliography
+
+%% ===================================================================
+%% FIM DO DOCUMENTO
+%% ===================================================================
+\end{document}
