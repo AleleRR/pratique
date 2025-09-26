@@ -272,7 +272,6 @@ INPUT C:\Users\alexr\AppData\Local\Programs\MiKTeX\tex\latex\biblatex\blx-case-e
 INPUT C:\Users\alexr\AppData\Local\Programs\MiKTeX\tex\latex\biblatex\blx-case-expl3.sty
 INPUT C:\Users\alexr\AppData\Local\Programs\MiKTeX\tex\latex\cleveref\cleveref.sty
 INPUT C:\Users\alexr\AppData\Local\Programs\MiKTeX\tex\latex\cleveref\cleveref.sty
-INPUT C:\Users\alexr\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecrm1000.tfm
 INPUT C:\Users\alexr\AppData\Local\Programs\MiKTeX\tex\latex\biblatex-abnt\lbx\english-abnt.lbx
 INPUT C:\Users\alexr\AppData\Local\Programs\MiKTeX\tex\latex\biblatex-abnt\lbx\english-abnt.lbx
 INPUT C:\Users\alexr\AppData\Local\Programs\MiKTeX\tex\latex\lipsum\lipsum.sty
@@ -301,6 +300,9 @@ INPUT C:\Users\alexr\AppData\Local\Programs\MiKTeX\tex\latex\newtx\t1ntxtlf.fd
 INPUT C:\Users\alexr\AppData\Local\Programs\MiKTeX\tex\latex\newtx\t1ntxtlf.fd
 INPUT C:\Users\alexr\AppData\Local\Programs\MiKTeX\tex\latex\newtx\t1ntxtlf.fd
 INPUT C:\Users\alexr\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntx-Regular-tlf-t1.tfm
+INPUT .\entrega1.aux
+INPUT .\entrega1.aux
+INPUT entrega1.aux
 OUTPUT entrega1.aux
 INPUT C:\Users\alexr\AppData\Local\Programs\MiKTeX\tex\latex\newtx\omlntxmi.fd
 INPUT C:\Users\alexr\AppData\Local\Programs\MiKTeX\tex\latex\newtx\omlntxmi.fd
@@ -460,6 +462,7 @@ INPUT C:\Users\alexr\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmss.fd
 INPUT C:\Users\alexr\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmss10.tfm
 INPUT C:\Users\alexr\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-ec.enc
 INPUT entrega1.aux
+INPUT entrega1.run.xml
 OUTPUT entrega1.run.xml
 INPUT C:\Users\alexr\AppData\Local\Programs\MiKTeX\fonts\type1\public\fontawesome\FontAwesome.pfb
 INPUT C:\Users\alexr\AppData\Local\Programs\MiKTeX\fonts\type1\public\fontawesome\FontAwesome.pfb

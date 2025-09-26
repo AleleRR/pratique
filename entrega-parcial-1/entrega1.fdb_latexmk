@@ -1,12 +1,11 @@
 # Fdb version 4
-["biber entrega1"] 0 "entrega1.bcf" "entrega1.bbl" "entrega1" 1758839514.28186 -1
-  "entrega1.bcf" 1758839514 112616 3e827a2cebf4dda3e4e16f73f5ba6477 "pdflatex"
-  "unoesc-article.bib" 1757544946 16925 3d9d5555f7e8ede6ff609a3dc7987a4a ""
+["biber entrega1"] 1758924058.30414 "entrega1.bcf" "entrega1.bbl" "entrega1" 1758924094.97389 0
+  "entrega1.bcf" 1758924094 112616 3e827a2cebf4dda3e4e16f73f5ba6477 "pdflatex"
   (generated)
   "entrega1.bbl"
   "entrega1.blg"
   (rewritten before read)
-["pdflatex"] 1758839511.94886 "c:/Users/alexr/OneDrive/Documentos/Codes/Faculdade/38389 - PRATICA PROFISSIONAL E INSERCAO COMUNITARI I- CHASIS-02/entrega_parcial_1/entrega-parcial-1/entrega1.tex" "entrega1.pdf" "entrega1" 1758839514.28249 2
+["pdflatex"] 1758924092.20568 "c:/Users/alexr/OneDrive/Documentos/Codes/Faculdade/38389 - PRATICA PROFISSIONAL E INSERCAO COMUNITARI I- CHASIS-02/entrega_parcial_1/entrega-parcial-1/entrega1.tex" "entrega1.pdf" "entrega1" 1758924094.97459 0
   "C:/Users/alexr/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1758839324 161945 20771634afb89ae646f1e2e1c712a483 ""
   "C:/Users/alexr/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1758839320 13286966 ae13ad43c71450e04085db02fa470bbd ""
   "C:/Users/alexr/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/fontawesome/fontawesomeone.enc" 1463869852 1687 f004baecce60175c6453d0e3f808cf20 ""
@@ -14,7 +13,6 @@
   "C:/Users/alexr/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
   "C:/Users/alexr/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1736607166 2914 fdbc4a54b9bc76f4551b5303f2737d33 ""
   "C:/Users/alexr/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/tex-gyre/q-ts1.enc" 1525740614 3124 3813fd4c981d99822890a2861b0d274c ""
-  "C:/Users/alexr/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ecrm1000.tfm" 993062122 3148 7e594c8240c71e432203f65ab5f95a51 ""
   "C:/Users/alexr/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ecrm1200.tfm" 993062126 3152 4850ff0163852b7fab34bd55e1197f28 ""
   "C:/Users/alexr/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmr10.tfm" 1136765053 1296 45809c5a464d5f32c8f98ba97c1bb47f ""
   "C:/Users/alexr/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmr12.tfm" 1136765053 1288 655e228510b4c2a1abe905c368440826 ""
@@ -190,13 +188,13 @@
   "C:/Users/alexr/AppData/Local/Programs/MiKTeX/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
   "C:/Users/alexr/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty" 1693735632 123 a302f2c651a95033260db60e51527ae8 ""
   "C:/Users/alexr/AppData/Local/Programs/MiKTeX/tex/latex/yafoot/fnpos.sty" 1536067238 3552 ffa6a47ef8edd0d65a39b6fbb4525e81 ""
-  "Logos/orcid-id" 0 -1 0 ""
   "abnt-num-brkt.cbx" 1757544946 11288 0f55425dfc560a6e753902b520074db9 ""
-  "c:/Users/alexr/OneDrive/Documentos/Codes/Faculdade/38389 - PRATICA PROFISSIONAL E INSERCAO COMUNITARI I- CHASIS-02/entrega_parcial_1/entrega-parcial-1/entrega1.tex" 1758838836 8948 3a3307a1545d945d2886fce6bbced07a ""
-  "entrega1.aux" 1758839513 2979 f5deca3f5cf798517aa66930f88a7777 "pdflatex"
-  "entrega1.bbl" 1758838279 0 d41d8cd98f00b204e9800998ecf8427e "biber entrega1"
-  "entrega1.tex" 1758838836 8948 3a3307a1545d945d2886fce6bbced07a ""
-  "unoesc-article.sty" 1757544946 11786 60721012bf77b2517c851f21effd7534 ""
+  "c:/Users/alexr/OneDrive/Documentos/Codes/Faculdade/38389 - PRATICA PROFISSIONAL E INSERCAO COMUNITARI I- CHASIS-02/entrega_parcial_1/entrega-parcial-1/entrega1.tex" 1758924091 6801 1bd60622af791df0b881174255a375f6 ""
+  "entrega1.aux" 1758924094 2981 0431b5249fc52cfc74cce437d24aed20 "pdflatex"
+  "entrega1.bbl" 1758924060 486 76d65a242ec496c9b4361af646ff12cb "biber entrega1"
+  "entrega1.run.xml" 1758924094 2546 acdb448e9bd89dd970ea04d5f6dff889 "pdflatex"
+  "entrega1.tex" 1758924091 6801 1bd60622af791df0b881174255a375f6 ""
+  "unoesc-article.sty" 1758924047 11700 90daaa9c8db3c41b43e689d1edd6b9dd ""
   (generated)
   "entrega1.aux"
   "entrega1.bcf"
