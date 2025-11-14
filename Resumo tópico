@@ -1,11 +1,20 @@
+Artefatos de Pesquisa:
 https://periodicos.newsciencepubl.com/arace/article/view/7642/9869
 https://repositorio.ifes.edu.br/bitstream/handle/123456789/2883/TCF_Felipe_Gueller.pdf?sequence=1&isAllowed=y
 https://revista.fcmmg.br/index.php/REES/article/view/214
 https://www.gov.br/mds/pt-br/acoes-e-programas/promocao-da-alimentacao-adequada-e-saudavel/cesta-basica-de-alimentos
+https://www.youtube.com/watch?v=II9q5v4hfBk&feature=youtu.be
+https://www.youtube.com/watch?v=N5MGib1aB4E&feature=youtu.be
+Artefatos de Pesquisa(Chapecó):
+●	Unochapecó: 
+●	https://uno.edu.br/noticias/subiu-de-novo
 
 1. Os artigos citados executam muito bem a aplicação prática de tecnologias modernas, os trabalhos acertam ao escolher tecnologias robustas e amplamente utilizadas no mercado,
-garantindo escalabilidade e facilidade de manutenção. Apresentam também uma solução de logística, fazendo integração com o Google Maps para aprimorar a distribuição de alimentos melhorando rotas e pontos de parada,
-permitindo que o sistema calcule e exiba o tempo e a distância das rotas. Foram realizados levantamentos detalhados de Requisitos Funcionais e Não Funcionais, cobrindo desde o login até a geração de relatórios.
+garantindo escalabilidade e facilidade de manutenção. Apresentam também uma solução de logística, fazendo integração com o Google Maps para aprimorar a distribuição de alimentos melhorando rotas e pontos de parada bem como
+o uso do gps para sugerir automaticamente o mercado mais próximo ou validar o local da coleta, permitindo que o sistema calcule e exiba o tempo e a distância das rotas. Foram realizados levantamentos detalhados de Requisitos
+Funcionais e Não Funcionais, cobrindo desde o login até a geração de relatórios, como exemplo, permitindo que o usuáro acompanhe as alterações de preço aplicadas ao produto, outro ponto muito importante é a implementação de 
+seguranças importantes para o sistema assim como alertas visuais para melhorar a comunicação com o usuário.
+A página do gov é importante pois é o ponto de partida legal e metodológico para a composição da cesta básica no Brasil mesmo que sua definição esteja defesada em relação aos hábitos de consumo atuais.
 
 2. Requisitos Funcionais:
 - Permitir o cadastro de usuários e entidades da comunidade.
