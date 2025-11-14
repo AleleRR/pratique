@@ -38,3 +38,14 @@ A página do gov é importante pois é o ponto de partida legal e metodológico 
 - Deve proteger os dados dos usuários.
 - Deve ser escalável para novas melhorias.
 - É desejável que o sistema permita a criação de campanhas de arrecadação.
+
+
+Os trabalhos analisados demonstram excelência na engenharia de software aplicada, selecionando stacks tecnológicas robustas para resolver problemas distintos. O projeto de gestão de doações ("Cesta Beneficente") adota uma arquitetura moderna baseada em Angular (TypeScript) no front-end e Node.js com Express e PostgreSQL no back-end, garantindo escalabilidade. Em contrapartida, o aplicativo de monitoramento econômico ("Observatório Econômico") aposta no desenvolvimento nativo Android (Java) integrado ao Firebase , uma escolha estratégica para garantir a persistência de dados e sincronização em nuvem.
+
+No âmbito da logística, o sistema de doações se destaca ao implementar uma solução para o Problema do Caixeiro Viajante (TSP). Utilizando a API Directions do Google Maps, o software não apenas traça rotas, mas otimiza a ordem dos pontos de parada (waypoints). Isso permite que o sistema calcule e exiba o tempo e a distância total das entregas com precisão , oferecendo ao voluntário a opção de gerar rotas inteligentes que economizam recursos.
+
+Já o aplicativo de coleta de preços foca na integridade e tempestividade da informação. Ele substitui o método manual (papel e Excel), propenso a erros de transcrição , por um sistema de coleta digital que valida os campos obrigatórios instantaneamente. Um diferencial crucial é o suporte ao funcionamento offline, onde os dados são armazenados localmente e sincronizados automaticamente com o banco NoSQL Firestore assim que a conexão é restabelecida, essencial para pesquisas em regiões com internet instável.
+
+Ambos os projetos realizaram levantamentos rigorosos de Requisitos Funcionais e Não Funcionais. O sistema de doações detalha desde o bloqueio de auto-benefício por administradores até a geração de relatórios de entregas. O aplicativo econômico foca na exportação de dados para planilhas compatíveis com Excel para análise posterior. A segurança também é prioritária: o primeiro utiliza criptografia JWT para autenticação , enquanto o segundo emprega o Firebase Authentication para controle de acesso de pesquisadores. Além disso, ambos investiram na Experiência do Usuário (UX) com feedbacks visuais (como "Toasts" de erro ou sucesso) para melhorar a comunicação com o operador.
+
+Por fim, a referência à página governamental é citada como estrutural para a metodologia científica. O artigo sobre o monitoramento de preços baseia-se explicitamente no Decreto-Lei nº 399 de 1938 , que define as quantidades e os 13 itens da "ração essencial mínima" por região (como a Região 3 para o Mato Grosso). Essa base legal padroniza a coleta, permitindo que os dados obtidos pelo aplicativo sejam comparáveis e consistentes com metodologias oficiais como a do DIEESE.
