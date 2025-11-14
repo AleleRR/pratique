@@ -11,8 +11,8 @@ Este documento reúne os artefatos de pesquisa, a análise dos trabalhos correla
 * [Gov.br: Definição da Cesta Básica de Alimentos](https://www.gov.br/mds/pt-br/acoes-e-programas/promocao-da-alimentacao-adequada-e-saudavel/cesta-basica-de-alimentos)
 
 ### Referências Multimídia
-* [Vídeo de Referência 1](https://www.youtube.com/watch?v=II9q5v4hfBk&feature=youtu.be)
-* [Vídeo de Referência 2](https://www.youtube.com/watch?v=N5MGib1aB4E&feature=youtu.be)
+* [Cesta Básica Mais Cara em Chapecó](https://www.youtube.com/watch?v=II9q5v4hfBk&feature=youtu.be)
+* [Pesquisa em Chapecó revela aumento no preço do cesto básico](https://www.youtube.com/watch?v=N5MGib1aB4E&feature=youtu.be)
 
 ### Contexto Regional (Chapecó)
 * [Unochapecó: Subiu de novo](https://uno.edu.br/noticias/subiu-de-novo)
@@ -37,16 +37,16 @@ Os artigos e trabalhos analisados demonstram excelência na **aplicação práti
 
 O sistema deve oferecer as seguintes funcionalidades:
 
-- [ ] Permitir o cadastro de usuários e entidades da comunidade.
-- [ ] Permitir o cadastro de produtos, serviços e eventos locais.
-- [ ] Permitir busca sobre produtos, serviços e eventos locais.
-- [ ] Permitir que o usuário escaneie o produto para busca.
-- [ ] Exibir informações detalhadas sobre produtos, serviços e eventos locais.
-- [ ] Enviar notificações ou mensagens entre os participantes.
-- [ ] Exibir métricas e indicadores dos produtos, serviços e eventos.
-- [ ] Permitir análise comparativa de preços.
-- [ ] Permitir que o usuário crie e gerencie listas de compras.
-- [ ] Integrar inteligência artificial para otimizar o processo de escaneamento.
+- Permitir o cadastro de usuários e entidades da comunidade.
+- Permitir o cadastro de produtos, serviços e eventos locais.
+- Permitir busca sobre produtos, serviços e eventos locais.
+- Permitir que o usuário escaneie o produto para busca.
+- Exibir informações detalhadas sobre produtos, serviços e eventos locais.
+- Enviar notificações ou mensagens entre os participantes.
+- Exibir métricas e indicadores dos produtos, serviços e eventos.
+- Permitir análise comparativa de preços.
+- Permitir que o usuário crie e gerencie listas de compras.
+- Integrar inteligência artificial para otimizar o processo de escaneamento.
 
 ---
 
@@ -54,9 +54,9 @@ O sistema deve oferecer as seguintes funcionalidades:
 
 O sistema deve atender aos seguintes critérios de qualidade:
 
-- [ ] **Usabilidade:** Deve apresentar interface simples e de fácil navegação.
-- [ ] **Portabilidade:** Deve apresentar compatibilidade com dispositivos móveis (Responsividade/App).
-- [ ] **Desempenho:** Deve garantir tempo de resposta rápido.
-- [ ] **Segurança:** Deve proteger os dados sensíveis dos usuários.
-- [ ] **Escalabilidade:** A arquitetura deve suportar novas melhorias e aumento de carga.
-- [ ] **Funcionalidade Desejável:** O sistema deve permitir a criação de campanhas de arrecadação.
+- **Usabilidade:** Deve apresentar interface simples e de fácil navegação.
+- **Portabilidade:** Deve apresentar compatibilidade com dispositivos móveis (Responsividade/App).
+- **Desempenho:** Deve garantir tempo de resposta rápido.
+- **Segurança:** Deve proteger os dados sensíveis dos usuários.
+- **Escalabilidade:** A arquitetura deve suportar novas melhorias e aumento de carga.
+- **Funcionalidade Desejável:** O sistema deve permitir a criação de campanhas de arrecadação.
