@@ -1,11 +1,11 @@
 # Fdb version 4
-["biber entrega2"] 1763077982.6947 "entrega2.bcf" "entrega2.bbl" "entrega2" 1763082081.19557 0
-  "entrega2.bcf" 1763082080 112616 3e827a2cebf4dda3e4e16f73f5ba6477 "pdflatex"
+["biber entrega2"] 1763077982.6947 "entrega2.bcf" "entrega2.bbl" "entrega2" 1763083110.25557 0
+  "entrega2.bcf" 1763083109 112616 3e827a2cebf4dda3e4e16f73f5ba6477 "pdflatex"
   (generated)
   "entrega2.bbl"
   "entrega2.blg"
   (rewritten before read)
-["pdflatex"] 1763082078.19915 "c:/Users/Usuario/Documents/pratique-github/pratique/entrega-parcial-2/entrega2.tex" "entrega2.pdf" "entrega2" 1763082081.19641 0
+["pdflatex"] 1763083107.15632 "c:/Users/Usuario/Documents/pratique-github/pratique/entrega-parcial-2/entrega2.tex" "entrega2.pdf" "entrega2" 1763083110.25645 0
   "C:/Users/Usuario/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1758689428 161945 20771634afb89ae646f1e2e1c712a483 ""
   "C:/Users/Usuario/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1758688402 13287934 14d19523954ef46f05882b9368095c87 ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/fontawesome/fontawesomeone.enc" 1463869852 1687 f004baecce60175c6453d0e3f808cf20 ""
@@ -189,11 +189,11 @@
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty" 1693735632 123 a302f2c651a95033260db60e51527ae8 ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/tex/latex/yafoot/fnpos.sty" 1536067238 3552 ffa6a47ef8edd0d65a39b6fbb4525e81 ""
   "abnt-num-brkt.cbx" 1763077732 11665 0f55425dfc560a6e753902b520074db9 ""
-  "c:/Users/Usuario/Documents/pratique-github/pratique/entrega-parcial-2/entrega2.tex" 1763082077 9349 678635d8f617bd0e6331f707da67caa3 ""
-  "entrega2.aux" 1763082080 5071 9d7972d9520f8bf77b7f549be0cb1ac2 "pdflatex"
+  "c:/Users/Usuario/Documents/pratique-github/pratique/entrega-parcial-2/entrega2.tex" 1763083103 10928 9c1cdb92c3599387d307031c288344d2 ""
+  "entrega2.aux" 1763083109 5071 aeb429b7cf60ce3c37d51e0108a9b635 "pdflatex"
   "entrega2.bbl" 1763077984 486 76d65a242ec496c9b4361af646ff12cb "biber entrega2"
-  "entrega2.run.xml" 1763082080 2546 506ba295dbc287e35c252c0323b6fb6f "pdflatex"
-  "entrega2.tex" 1763082077 9349 678635d8f617bd0e6331f707da67caa3 ""
+  "entrega2.run.xml" 1763083109 2546 506ba295dbc287e35c252c0323b6fb6f "pdflatex"
+  "entrega2.tex" 1763083103 10928 9c1cdb92c3599387d307031c288344d2 ""
   "unoesc-article.sty" 1763077732 12132 90daaa9c8db3c41b43e689d1edd6b9dd ""
   (generated)
   "entrega2.aux"

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.9.24)  13 NOV 2025 22:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.9.24)  13 NOV 2025 22:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1728,20 +1728,25 @@ Overfull \vbox (0.27362pt too high) has occurred while \output is active []
 
  [3]
 
-LaTeX Warning: Empty bibliography on input line 112.
+
+Overfull \vbox (0.27362pt too high) has occurred while \output is active []
+
+ [4]
+
+LaTeX Warning: Empty bibliography on input line 118.
 
 
 Class memoir Warning: The material used in the headers is too large
 (14.49998pt) for the given head height (14.22636pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 114.
+(in both cases you will find help in the memoir manual). on input line 120.
 
 
 
 
 Overfull \vbox (0.27362pt too high) has occurred while \output is active []
 
- [4] (entrega2.aux)
+ [5] (entrega2.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2020/03/25>
@@ -1751,13 +1756,13 @@ Package logreq Info: Writing requests to 'entrega2.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35464 strings out of 468130
- 606075 string characters out of 5429665
+ 35484 strings out of 468130
+ 606382 string characters out of 5429665
  1631096 words of memory out of 5000000
- 63507 multiletter control sequences out of 15000+600000
- 689163 words of font info for 153 fonts, out of 8000000 for 9000
+ 63520 multiletter control sequences out of 15000+600000
+ 689421 words of font info for 156 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,12n,117p,1271b,4447s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,13n,117p,1271b,4447s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exist, replaced by a fixed one
 
@@ -1774,9 +1779,9 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 <C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/fontawesome/FontAwesome.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qtmr.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmb.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmr.pfb>
-Output written on entrega2.pdf (4 pages, 150518 bytes).
+Output written on entrega2.pdf (5 pages, 155174 bytes).
 PDF statistics:
- 118 PDF objects out of 1000 (max. 8388607)
- 22 named destinations out of 1000 (max. 500000)
+ 122 PDF objects out of 1000 (max. 8388607)
+ 23 named destinations out of 1000 (max. 500000)
  31825 words of extra memory for PDF output out of 35830 (max. 10000000)
 
