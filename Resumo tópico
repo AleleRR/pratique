@@ -1,0 +1,28 @@
+https://periodicos.newsciencepubl.com/arace/article/view/7642/9869
+https://repositorio.ifes.edu.br/bitstream/handle/123456789/2883/TCF_Felipe_Gueller.pdf?sequence=1&isAllowed=y
+https://revista.fcmmg.br/index.php/REES/article/view/214
+https://www.gov.br/mds/pt-br/acoes-e-programas/promocao-da-alimentacao-adequada-e-saudavel/cesta-basica-de-alimentos
+
+1. Os artigos citados executam muito bem a aplicação prática de tecnologias modernas, os trabalhos acertam ao escolher tecnologias robustas e amplamente utilizadas no mercado,
+garantindo escalabilidade e facilidade de manutenção. Apresentam também uma solução de logística, fazendo integração com o Google Maps para aprimorar a distribuição de alimentos melhorando rotas e pontos de parada,
+permitindo que o sistema calcule e exiba o tempo e a distância das rotas. Foram realizados levantamentos detalhados de Requisitos Funcionais e Não Funcionais, cobrindo desde o login até a geração de relatórios.
+
+2. Requisitos Funcionais:
+- Permitir o cadastro de usuários e entidades da comunidade.
+- Permitir o cadastro de produtos, serviços e eventos locais.
+- Permitir busca sobre produtos, serviços e eventos locais.
+- Permitir que o usuário escaneie o produto para busca.
+- Exibir informações sobre produtos, serviços e eventos locais.
+- Enviar notificações ou mensagens entre os participantes.
+- Exibir métricas dos produtos, serviços e eventos locais.
+- Permitir análise comparativa de preços.
+- Permitir que o usuário crie listas de compras.
+- Deve integrar inteligência artificial para otimizar processo de escaneamento.
+
+3. Requisitos Näo funcionais:
+- Deve apresentar interface simples e de fácil navegação.
+- Deve apresentar compatibilidade com dispositivos móveis.
+- Deve garantir tempo de resposta rápido.
+- Deve proteger os dados dos usuários.
+- Deve ser escalável para novas melhorias.
+- É desejável que o sistema permita a criação de campanhas de arrecadação.
