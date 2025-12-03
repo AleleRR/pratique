@@ -20,6 +20,7 @@ seguranças importantes para o sistema assim como alertas visuais para melhorar 
 A página do gov é importante pois é o ponto de partida legal e metodológico para a composição da cesta básica no Brasil mesmo que sua definição esteja defesada em relação aos hábitos de consumo atuais.
 
 2. Requisitos Funcionais:
+- Permitir o login de usuários e entidades da comunidade.
 - Permitir o cadastro de usuários e entidades da comunidade.
 - Permitir o cadastro de produtos, serviços e eventos locais.
 - Permitir busca sobre produtos, serviços e eventos locais.
