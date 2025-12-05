@@ -1,0 +1,229 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{arace_artigo}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=392bcbdf9d0496af0e10a972b32b14c5}{%
+           family={Sobrenome},
+           familyi={S\bibinitperiod},
+           given={Nome},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{392bcbdf9d0496af0e10a972b32b14c5}
+      \strng{fullhash}{392bcbdf9d0496af0e10a972b32b14c5}
+      \strng{fullhashraw}{392bcbdf9d0496af0e10a972b32b14c5}
+      \strng{bibnamehash}{392bcbdf9d0496af0e10a972b32b14c5}
+      \strng{authorbibnamehash}{392bcbdf9d0496af0e10a972b32b14c5}
+      \strng{authornamehash}{392bcbdf9d0496af0e10a972b32b14c5}
+      \strng{authorfullhash}{392bcbdf9d0496af0e10a972b32b14c5}
+      \strng{authorfullhashraw}{392bcbdf9d0496af0e10a972b32b14c5}
+      \field{extraname}{1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista Aracê}
+      \field{title}{{[TÍTULO DO ARTIGO ID 7642]}}
+      \field{year}{2024}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://periodicos.newsciencepubl.com/arace/article/view/7642/9869
+      \endverb
+      \verb{url}
+      \verb https://periodicos.newsciencepubl.com/arace/article/view/7642/9869
+      \endverb
+      \warn{\item article entry 'arace_artigo' (entrega-final.bib): Invalid format '05 dez. 2025' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{gueller_tcf}{monography}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=384f8356264573c3f9b9bc424474b9f6}{%
+           family={Gueller},
+           familyi={G\bibinitperiod},
+           given={Felipe},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Instituto Federal do Espírito Santo (IFES)}%
+      }
+      \strng{namehash}{384f8356264573c3f9b9bc424474b9f6}
+      \strng{fullhash}{384f8356264573c3f9b9bc424474b9f6}
+      \strng{fullhashraw}{384f8356264573c3f9b9bc424474b9f6}
+      \strng{bibnamehash}{384f8356264573c3f9b9bc424474b9f6}
+      \strng{authorbibnamehash}{384f8356264573c3f9b9bc424474b9f6}
+      \strng{authornamehash}{384f8356264573c3f9b9bc424474b9f6}
+      \strng{authorfullhash}{384f8356264573c3f9b9bc424474b9f6}
+      \strng{authorfullhashraw}{384f8356264573c3f9b9bc424474b9f6}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{bookpagination}{sheet}
+      \field{title}{{[TÍTULO DO TCF/TCC]}}
+      \field{type}{Trabalho de Conclusão de Curso}
+      \field{year}{2023}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://repositorio.ifes.edu.br/bitstream/handle/123456789/2883/TCF_Felipe_Gueller.pdf?sequence=1&isAllowed=y
+      \endverb
+      \verb{url}
+      \verb https://repositorio.ifes.edu.br/bitstream/handle/123456789/2883/TCF_Felipe_Gueller.pdf?sequence=1&isAllowed=y
+      \endverb
+      \warn{\item monography entry 'gueller_tcf' (entrega-final.bib): Invalid format '05 dez. 2025' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{rees_artigo}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=392bcbdf9d0496af0e10a972b32b14c5}{%
+           family={Sobrenome},
+           familyi={S\bibinitperiod},
+           given={Nome},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{392bcbdf9d0496af0e10a972b32b14c5}
+      \strng{fullhash}{392bcbdf9d0496af0e10a972b32b14c5}
+      \strng{fullhashraw}{392bcbdf9d0496af0e10a972b32b14c5}
+      \strng{bibnamehash}{392bcbdf9d0496af0e10a972b32b14c5}
+      \strng{authorbibnamehash}{392bcbdf9d0496af0e10a972b32b14c5}
+      \strng{authornamehash}{392bcbdf9d0496af0e10a972b32b14c5}
+      \strng{authorfullhash}{392bcbdf9d0496af0e10a972b32b14c5}
+      \strng{authorfullhashraw}{392bcbdf9d0496af0e10a972b32b14c5}
+      \field{extraname}{2}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista de Enfermagem e Educação em Saúde (REES)}
+      \field{title}{{[TÍTULO DO ARTIGO ID 214]}}
+      \field{year}{2023}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://revista.fcmmg.br/index.php/REES/article/view/214
+      \endverb
+      \verb{url}
+      \verb https://revista.fcmmg.br/index.php/REES/article/view/214
+      \endverb
+      \warn{\item article entry 'rees_artigo' (entrega-final.bib): Invalid format '05 dez. 2025' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{brasil_cesta}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=aa43becf0d21463be7540bf3b40bf243}{%
+           family={Brasil},
+           familyi={B\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome}%
+      }
+      \strng{namehash}{aa43becf0d21463be7540bf3b40bf243}
+      \strng{fullhash}{aa43becf0d21463be7540bf3b40bf243}
+      \strng{fullhashraw}{aa43becf0d21463be7540bf3b40bf243}
+      \strng{bibnamehash}{aa43becf0d21463be7540bf3b40bf243}
+      \strng{authorbibnamehash}{aa43becf0d21463be7540bf3b40bf243}
+      \strng{authornamehash}{aa43becf0d21463be7540bf3b40bf243}
+      \strng{authorfullhash}{aa43becf0d21463be7540bf3b40bf243}
+      \strng{authorfullhashraw}{aa43becf0d21463be7540bf3b40bf243}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Decreto nº 11.936/2024}
+      \field{title}{Cesta Básica de Alimentos}
+      \field{year}{2024}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.gov.br/mds/pt-br/acoes-e-programas/promocao-da-alimentacao-adequada-e-saudavel/cesta-basica-de-alimentos
+      \endverb
+      \verb{url}
+      \verb https://www.gov.br/mds/pt-br/acoes-e-programas/promocao-da-alimentacao-adequada-e-saudavel/cesta-basica-de-alimentos
+      \endverb
+      \warn{\item misc entry 'brasil_cesta' (entrega-final.bib): Invalid format '05 dez. 2025' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{youtube_scnoar}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c328ee88c06338cc4a326e1523030f34}{%
+           family={{Programa SC no Ar}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {YouTube}%
+      }
+      \strng{namehash}{c328ee88c06338cc4a326e1523030f34}
+      \strng{fullhash}{c328ee88c06338cc4a326e1523030f34}
+      \strng{fullhashraw}{c328ee88c06338cc4a326e1523030f34}
+      \strng{bibnamehash}{c328ee88c06338cc4a326e1523030f34}
+      \strng{authorbibnamehash}{c328ee88c06338cc4a326e1523030f34}
+      \strng{authornamehash}{c328ee88c06338cc4a326e1523030f34}
+      \strng{authorfullhash}{c328ee88c06338cc4a326e1523030f34}
+      \strng{authorfullhashraw}{c328ee88c06338cc4a326e1523030f34}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Vídeo publicado em 15 jul. 2025}
+      \field{title}{Cesta Básica Mais Cara em Chapecó}
+      \field{year}{2025}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.youtube.com/watch?v=II9q5v4hfBk&feature=youtu.be
+      \endverb
+      \verb{url}
+      \verb https://www.youtube.com/watch?v=II9q5v4hfBk&feature=youtu.be
+      \endverb
+      \warn{\item misc entry 'youtube_scnoar' (entrega-final.bib): Invalid format '05 dez. 2025' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{youtube_balanco}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=e4b088eb1c53828a73779b5d23004f24}{%
+           family={{Balanço Geral Oeste}},
+           familyi={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {YouTube}%
+      }
+      \strng{namehash}{e4b088eb1c53828a73779b5d23004f24}
+      \strng{fullhash}{e4b088eb1c53828a73779b5d23004f24}
+      \strng{fullhashraw}{e4b088eb1c53828a73779b5d23004f24}
+      \strng{bibnamehash}{e4b088eb1c53828a73779b5d23004f24}
+      \strng{authorbibnamehash}{e4b088eb1c53828a73779b5d23004f24}
+      \strng{authornamehash}{e4b088eb1c53828a73779b5d23004f24}
+      \strng{authorfullhash}{e4b088eb1c53828a73779b5d23004f24}
+      \strng{authorfullhashraw}{e4b088eb1c53828a73779b5d23004f24}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Vídeo publicado em 18 mar. 2025}
+      \field{title}{Pesquisa em Chapecó revela aumento no preço do cesto básico}
+      \field{year}{2025}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.youtube.com/watch?v=N5MGib1aB4E&feature=youtu.be
+      \endverb
+      \verb{url}
+      \verb https://www.youtube.com/watch?v=N5MGib1aB4E&feature=youtu.be
+      \endverb
+      \warn{\item misc entry 'youtube_balanco' (entrega-final.bib): Invalid format '05 dez. 2025' of date field 'urldate' - ignoring}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

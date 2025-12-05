@@ -1,0 +1,22 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is 'entrega-final.blg'
+[118] biber-MSWIN64:342> INFO - === 
+[156] Biber.pm:421> INFO - Reading 'entrega-final.bcf'
+[290] Biber.pm:999> INFO - Using all citekeys in bib section 0
+[307] Biber.pm:4487> INFO - Processing section 0
+[320] Biber.pm:4678> INFO - Looking for bibtex file 'entrega-final.bib' for section 0
+[376] bibtex.pm:1713> INFO - LaTeX decoding ...
+[396] bibtex.pm:1519> INFO - Found BibTeX data source 'entrega-final.bib'
+[464] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[465] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[465] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'pt-BR'
+[465] Biber.pm:4313> INFO - No sort tailoring available for locale 'pt-BR'
+[475] bbl.pm:676> INFO - Writing 'entrega-final.bbl' with encoding 'UTF-8'
+[478] bbl.pm:779> INFO - Output to entrega-final.bbl
+[479] Biber.pm:132> WARN - monography entry 'gueller_tcf' (entrega-final.bib): Invalid format '05 dez. 2025' of date field 'urldate' - ignoring
+[479] Biber.pm:132> WARN - article entry 'arace_artigo' (entrega-final.bib): Invalid format '05 dez. 2025' of date field 'urldate' - ignoring
+[479] Biber.pm:132> WARN - misc entry 'brasil_cesta' (entrega-final.bib): Invalid format '05 dez. 2025' of date field 'urldate' - ignoring
+[479] Biber.pm:132> WARN - misc entry 'youtube_scnoar' (entrega-final.bib): Invalid format '05 dez. 2025' of date field 'urldate' - ignoring
+[479] Biber.pm:132> WARN - article entry 'rees_artigo' (entrega-final.bib): Invalid format '05 dez. 2025' of date field 'urldate' - ignoring
+[479] Biber.pm:132> WARN - misc entry 'youtube_balanco' (entrega-final.bib): Invalid format '05 dez. 2025' of date field 'urldate' - ignoring
+[479] Biber.pm:134> INFO - WARNINGS: 6

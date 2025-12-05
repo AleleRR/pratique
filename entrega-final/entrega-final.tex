@@ -1,0 +1,188 @@
+\documentclass[
+  article,
+  a4paper,
+  12pt,
+  oneside,
+  fleqn
+]{abntex2}
+
+% Pacote de formatação personalizado que aparece na sua imagem
+\usepackage[ABNTNum=brkt]{entrega-final}
+
+% Arquivo de bibliografia
+\addbibresource{entrega-final.bib}
+
+\titulo{PROPOSTA DE UM SISTEMA INTELIGENTE PARA BUSCA E COMPARAÇÃO DE PREÇOS DE PRODUTOS DA CESTA BÁSICA}
+
+\autor{
+  Alexandre Reitemeyer\thanks{\affil{Curso de Sistemas de Informação, UNOESC, Chapecó}\sep\email{alexandre.reitemeyer@unoesc.edu.br}} \\
+  Angelo Pandolfo Antonini\thanks{\affil{Curso de Sistemas de Informação, UNOESC, Chapecó}\sep\email{aluno2@edu.unoesc.br}} \\
+  Jessé Chaves\thanks{\affil{Curso de Sistemas de Informação, UNOESC, Chapecó}\sep\email{aluno3@edu.unoesc.br}} \\
+  Lucas Santos Magro\thanks{\affil{Curso de Sistemas de Informação, UNOESC, Chapecó}\sep\email{lucas.magro@unoesc.edu.br}} \\
+  Prof. Jacson Luiz Matte\thanks{\affil{Orientador; Curso de Sistemas de Informação, UNOESC, Chapecó}\sep\email{jacson.matte@unoesc.edu.br}}
+}
+
+\data{Chapecó, 05 de dezembro de 2025}
+
+\begin{document}
+
+\nocite{*}
+
+\pretextual
+
+\begin{paginadetitulo}
+    \begin{ambienteresumo}
+        Este trabalho propõe o desenvolvimento de uma solução computacional composta por um aplicativo e um site que visa simplificar e automatizar a busca por produtos da cesta básica. Utilizando recursos de inteligência artificial, o sistema permitirá ao usuário pesquisar ou escanear produtos de seu interesse, recebendo uma análise comparativa de preços e estabelecimentos. A plataforma classificará as opções com base em múltiplos critérios, como preço, distância e avaliações de outros usuários, oferecendo uma ferramenta poderosa para a tomada de decisão, promovendo economia de tempo e dinheiro.
+        \palavraschave{Cesta Básica. Comparação de Preços. Inteligência Artificial. Aplicativo Móvel.}
+    \end{ambienteresumo}
+\end{paginadetitulo}
+
+\textual
+\newpage
+
+\section{Introdução}
+
+O custo de vida é uma preocupação constante para as famílias brasileiras, sendo a aquisição de itens da cesta básica uma das despesas mais significativas no orçamento mensal. Em um cenário econômico de flutuação de preços e ampla variedade de estabelecimentos comerciais, tanto físicos quanto online, a tarefa de encontrar os melhores preços para produtos essenciais pode ser complexa e demorada. Os consumidores frequentemente gastam um tempo considerável pesquisando em diferentes supermercados, comparando ofertas e calculando a melhor opção de compra para maximizar sua economia.
+
+Com o avanço da tecnologia e a crescente digitalização dos serviços, surgem oportunidades para otimizar processos cotidianos. O uso de aplicativos móveis e plataformas web para compras tornou-se comum, porém, poucas soluções integram de forma eficiente a busca e comparação de preços de produtos essenciais em um único ambiente, especialmente com foco regional e com o auxílio de tecnologias emergentes.
+
+Nesse contexto, este trabalho propõe o desenvolvimento de uma solução computacional composta por um aplicativo e um site que visa simplificar e automatizar a busca por produtos da cesta básica. Utilizando recursos de inteligência artificial, o sistema permitirá ao usuário pesquisar ou escanear produtos de seu interesse, recebendo uma análise comparativa de preços e estabelecimentos. A plataforma classificará as opções com base em múltiplos critérios, como preço, distância, acessibilidade e avaliações de outros usuários, oferecendo uma ferramenta poderosa para a tomada de decisão, promovendo economia de tempo e dinheiro.
+
+\section{Delimitação do Tema e Justificativa}
+
+\subsection{Delimitação do Tema}
+
+O presente estudo concentra-se no desenvolvimento de um sistema de software, abrangendo uma plataforma web e um aplicativo móvel, destinado à busca e comparação de preços de produtos que compõem a cesta básica brasileira.
+
+O escopo do projeto inclui:
+\begin{itemize}
+    \item A criação de uma interface que permita ao usuário buscar produtos por nome ou através do escaneamento de seu código de barras.
+    \item A implementação de um algoritmo de inteligência artificial para coletar, processar e classificar dados de preços de diferentes fontes, incluindo estabelecimentos comerciais locais e plataformas de e-commerce.
+    \item A apresentação dos resultados ao usuário de forma organizada, com base em critérios personalizáveis como menor preço, menor distância, melhor avaliação e acessibilidade do estabelecimento.
+\end{itemize}
+
+O projeto não abrangerá o desenvolvimento do sistema de e-commerce em si, ou seja, não incluirá funcionalidades de pagamento, logística de entrega ou gerenciamento de estoque dos estabelecimentos. O foco é estritamente na disponibilização de informações para auxiliar o consumidor em sua decisão de compra.
+
+\subsection{Justificativa}
+
+A relevância deste projeto pode ser analisada sob três perspectivas principais: econômica, social e tecnológica.
+
+Do ponto de vista econômico, a plataforma oferece um benefício direto ao consumidor. Em um país onde a inflação dos alimentos impacta significativamente o poder de compra, uma ferramenta que facilita a economia em itens essenciais tem grande valor prático. Ao otimizar o processo de compra, o sistema contribui para uma melhor gestão do orçamento familiar.
+
+Na esfera social, o projeto promove o consumo consciente e a democratização do acesso à informação. Ele capacita o consumidor a tomar decisões mais informadas, fomentando a competitividade entre os estabelecimentos comerciais e, potencialmente, levando a uma maior transparência de preços no mercado local. Além disso, a inclusão de critérios como acessibilidade nos estabelecimentos agrega um valor social importante.
+
+Sob o aspecto tecnológico, o trabalho se destaca pela aplicação de inteligência artificial em um problema cotidiano e de grande alcance. A integração de busca inteligente, processamento de dados em tempo real e geolocalização em uma plataforma unificada representa uma inovação no setor de aplicativos de comparação de preços. O desenvolvimento desta solução contribui para a exploração de novas tecnologias na resolução de desafios práticos da sociedade.
+
+\section{Objetivo Geral}
+
+Desenvolver uma plataforma computacional, composta por um aplicativo móvel e um website, que utilize inteligência artificial para auxiliar os usuários na busca e comparação de preços de produtos da cesta básica, classificando estabelecimentos físicos e online com base em critérios como preço, distância e avaliações, a fim de otimizar a economia e o tempo do consumidor no processo de compras.
+
+\section{Fundamentação Teórica}
+
+Os trabalhos analisados demonstram excelência na engenharia de software aplicada, selecionando stacks tecnológicas robustas para resolver problemas distintos. O projeto de gestão de doações ("Cesta Beneficente") adota uma arquitetura moderna baseada em Angular (TypeScript) no front-end e Node.js com Express e PostgreSQL no back-end, garantindo escalabilidade. Em contrapartida, o aplicativo de monitoramento econômico ("Observatório Econômico") aposta no desenvolvimento nativo Android (Java) integrado ao Firebase, uma escolha estratégica para garantir a persistência de dados e sincronização em nuvem.
+
+No âmbito da logística, o sistema de doações se destaca ao implementar uma solução para o Problema do Caixeiro Viajante (TSP). Utilizando a API Directions do Google Maps, o software não apenas traça rotas, mas otimiza a ordem dos pontos de parada (waypoints). Isso permite que o sistema calcule e exiba o tempo e a distância total das entregas com precisão, oferecendo ao voluntário a opção de gerar rotas inteligentes que economizam recursos.
+
+Já o aplicativo de coleta de preços foca na integridade e tempestividade da informação. Ele substitui o método manual (papel e Excel), propenso a erros de transcrição, por um sistema de coleta digital que valida os campos obrigatórios instantaneamente. Um diferencial crucial é o suporte ao funcionamento offline, onde os dados são armazenados localmente e sincronizados automaticamente com o banco NoSQL Firestore assim que a conexão é restabelecida, essencial para pesquisas em regiões com internet instável.
+
+Ambos os projetos realizaram levantamentos rigorosos de Requisitos Funcionais e Não Funcionais. O sistema de doações detalha desde o bloqueio de auto-benefício por administradores até a geração de relatórios de entregas. O aplicativo econômico foca na exportação de dados para planilhas compatíveis com Excel para análise posterior. A segurança também é prioritária: o primeiro utiliza criptografia JWT para autenticação, enquanto o segundo emprega o Firebase Authentication para controle de acesso de pesquisadores. Além disso, ambos investiram na Experiência do Usuário (UX) com feedbacks visuais (como "Toasts" de erro ou sucesso) para melhorar a comunicação com o operador.
+
+Por fim, a referência à página governamental é citada como estrutural para a metodologia científica. O artigo sobre o monitoramento de preços baseia-se explicitamente no Decreto-Lei nº 399 de 1938, que define as quantidades e os 13 itens da "ração essencial mínima" por região (como a Região 3 para o Mato Grosso). Essa base legal padroniza a coleta, permitindo que os dados obtidos pelo aplicativo sejam comparáveis e consistentes com metodologias oficiais como a do DIEESE.
+
+\section{Metodologia e Proposta do Sistema}
+
+\subsection{Requisitos Funcionais}
+
+\begin{itemize}
+    \item Permitir o login de usuários e entidades da comunidade.
+    \item Permitir o cadastro de usuários e entidades da comunidade.
+    \item Permitir o cadastro de produtos, serviços e eventos locais.
+    \item Permitir busca sobre produtos, serviços e eventos locais.
+    \item Permitir que o usuário escaneie o produto para busca.
+    \item Exibir informações sobre produtos, serviços e eventos locais.
+    \item Enviar notificações ou mensagens entre os participantes.
+    \item Exibir métricas dos produtos, serviços e eventos locais.
+    \item Permitir análise comparativa de preços.
+    \item Permitir que o usuário crie listas de compras.
+    \item Deve integrar inteligência artificial para otimizar processo de escaneamento.
+    \item Deve garantir a exclusão dos dados de usúario e entidades que deletarem suas contas.
+\end{itemize}
+
+\subsection{Requisitos Não Funcionais}
+
+\begin{itemize}
+    \item Deve apresentar interface simples e de fácil navegação.
+    \item Deve apresentar compatibilidade com dispositivos móveis.
+    \item Deve garantir tempo de resposta rápido.
+    \item Deve proteger os dados dos usuários.
+    \item Deve ser escalável para novas melhorias.
+    \item É desejável que o sistema permita a criação de campanhas de arrecadação.
+\end{itemize}
+
+\subsection{Modelagem do Sistema}
+
+A seguir são apresentados os diagramas da Unified Modeling Language (UML) que detalham a estrutura e o comportamento do sistema proposto.
+
+\begin{figure}[htb]
+    \caption{\label{fig:classes}Diagrama de Classes}
+    \begin{center}
+        \includegraphics[width=16cm]{UMLs/diagrama_de_classe.png}
+    \end{center}
+    \fonte{Acervo Pessoal (2025).}
+\end{figure}
+
+\begin{figure}[htb]
+    \caption{\label{fig:caso_uso}Diagrama de Casos de Uso}
+    \begin{center}
+        \includegraphics[width=16cm]{UMLs/caso_de_uso.png}
+    \end{center}
+    \fonte{Acervo Pessoal (2025).}
+\end{figure}
+
+\begin{figure}[htb]
+    \caption{\label{fig:seq_lista}Diagrama de Sequência: Criar Lista}
+    \begin{center}
+        \includegraphics[width=16cm]{UMLs/sequencia_criar_lista.png}
+    \end{center}
+    \fonte{Acervo Pessoal (2025).}
+\end{figure}
+
+\begin{figure}[htb]
+    \caption{\label{fig:seq_escanear}Diagrama de Sequência: Escanear Produto}
+    \begin{center}
+        \includegraphics[width=16cm]{UMLs/sequencia_escanear_produto.png}
+    \end{center}
+    \fonte{Acervo Pessoal (2025).}
+\end{figure}
+
+\begin{figure}[htb]
+    \caption{\label{fig:atividade}Diagrama de Atividades}
+    \begin{center}
+        \includegraphics[width=16cm]{UMLs/diagrama_de_atividade.png}
+    \end{center}
+    \fonte{Acervo Pessoal (2025).}
+\end{figure}
+
+\begin{figure}[htb]
+    \caption{\label{fig:componente}Diagrama de Componente}
+    \begin{center}
+        \includegraphics[width=16cm]{UMLs/diagrama_componente.png}
+    \end{center}
+    \fonte{Acervo Pessoal (2025).}
+\end{figure}
+
+\clearpage
+
+\section{Conclusão}
+
+O presente trabalho apresentou a proposta de desenvolvimento de um sistema inteligente para busca e comparação de preços de produtos da cesta básica, visando mitigar as dificuldades enfrentadas pelos consumidores diante da oscilação econômica e da dispersão de ofertas no mercado. A solução concebida, composta por um aplicativo móvel e uma interface web, utiliza tecnologias de inteligência artificial para modernizar o processo de compra, tornando-o mais eficiente e econômico.
+
+Através do levantamento de requisitos funcionais e não funcionais, bem como da modelagem do sistema utilizando a linguagem UML (Diagramas de Casos de Uso, Classes, Sequência, Atividades e Componentes), foi possível estruturar logicamente a solução. A modelagem demonstrou a viabilidade técnica do projeto, clarificando os fluxos de interação do usuário — desde o escaneamento do produto até a geração de listas comparativas — e a arquitetura de dados necessária para suportar tais operações.
+
+Conclui-se que a implementação deste sistema possui grande relevância social e econômica. Ao centralizar informações de preços, distância e avaliações, a ferramenta não apenas empodera o consumidor na tomada de decisão, mas também fomenta a competitividade transparente entre os estabelecimentos comerciais. Como trabalhos futuros, sugere-se o desenvolvimento do protótipo funcional com base na modelagem apresentada, seguido pela realização de testes de usabilidade e a integração gradual dos algoritmos de inteligência artificial propostos.
+
+\postextual
+\newpage
+\printbibliography
+
+\end{document}
