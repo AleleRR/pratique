@@ -31,6 +31,7 @@ A página do gov é importante pois é o ponto de partida legal e metodológico 
 - Permitir análise comparativa de preços.
 - Permitir que o usuário crie listas de compras.
 - Deve integrar inteligência artificial para otimizar processo de escaneamento.
+- Deve garantir a exclusão dos dados de usúario e entidades que deletarem suas contas.
 
 3. Requisitos Näo funcionais:
 - Deve apresentar interface simples e de fácil navegação.
