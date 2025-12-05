@@ -37,6 +37,7 @@ Os artigos e trabalhos analisados demonstram excelência na **aplicação práti
 
 O sistema deve oferecer as seguintes funcionalidades:
 
+- Permitir o login de usuários e entidades da comunidade.
 - Permitir o cadastro de usuários e entidades da comunidade.
 - Permitir o cadastro de produtos, serviços e eventos locais.
 - Permitir busca sobre produtos, serviços e eventos locais.
@@ -47,6 +48,7 @@ O sistema deve oferecer as seguintes funcionalidades:
 - Permitir análise comparativa de preços.
 - Permitir que o usuário crie e gerencie listas de compras.
 - Integrar inteligência artificial para otimizar o processo de escaneamento.
+- Deve garantir a exclusão dos dados de usúario e entidades que deletarem suas contas.
 
 ---
 
