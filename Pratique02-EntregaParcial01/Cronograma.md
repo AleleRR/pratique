@@ -1,15 +1,15 @@
-# 📋 Plano Tático de Engenharia – Distribuição de Cartões
+#  Plano Tático de Engenharia – Distribuição de Cartões
 ## 4 Sprints | 8 Semanas | 4 Desenvolvedores
 
 ---
 
-## 📌 Visão Geral
+##  Visão Geral
 
 Este documento detalha a distribuição de tarefas exatas para cada um dos 4 desenvolvedores ao longo de 4 Sprints (8 semanas). A divisão clara de papéis foi estruturada para evitar gargalos e garantir que os Requisitos Funcionais (RF) e Não Funcionais (RNF) sejam atendidos em paralelo.
 
 ---
 
-## 👥 Divisão de Papéis e Responsabilidades
+##  Divisão de Papéis e Responsabilidades
 
 | Desenvolvedor | Especialidade | Foco Principal |
 |---------------|---------------|----------------|
@@ -20,7 +20,7 @@ Este documento detalha a distribuição de tarefas exatas para cada um dos 4 des
 
 ---
 
-## 🚀 Cronograma Detalhado de Execução
+##  Cronograma Detalhado de Execução
 
 ### **Sprint 1: Fundação, Infraestrutura e Segurança Base**
 **Semanas 1 e 2**
@@ -78,7 +78,7 @@ Este documento detalha a distribuição de tarefas exatas para cada um dos 4 des
 
 ---
 
-## ⚠️ Gestão de Riscos
+##  Gestão de Riscos
 
 ### **Risco 1: Performance na Geração de Comprovantes**
 
@@ -112,7 +112,7 @@ Os dados são criptografados no banco com AES-256 (Dev 2). As buscas por nome/CP
 
 ---
 
-## 📊 Timeline Visual
+##  Timeline Visual
 
 ```
 Sprint 1 (Sem 1-2)  → Fundação & Security
@@ -123,10 +123,11 @@ Sprint 4 (Sem 7-8)  → Notificações & Go-Live
 
 ---
 
-## 📝 Próximas Ações
+##  Próximas Ações
 
-1. ✅ Validar divisão de papéis com a equipe
-2. ✅ Detalhar tecnologias específicas (framework, libs, etc.)
-3. ✅ Definir reuniões de sincronização (diárias por Sprint)
-4. ✅ Criar repositório único com estrutura de branches por Sprint
-5. ✅ Documentar a estratégia de criptografia e busca (Dev 1 + Dev 2)
+1.  Validar divisão de papéis com a equipe
+2.  Detalhar tecnologias específicas (framework, libs, etc.)
+3.  Definir reuniões de sincronização (diárias por Sprint)
+4.  Criar repositório único com estrutura de branches por Sprint
+
+5.  Documentar a estratégia de criptografia e busca (Dev 1 + Dev 2)
