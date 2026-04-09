@@ -1,6 +1,7 @@
 import { useAppContext } from "../context/AppContext";
 import { theme } from "../theme/theme";
 import { navItems } from "../data";
+import { Icon, CreditCard } from "../components/Icons";
 
 /**
  * Sidebar layout: Reactive notification badge from context.
@@ -22,7 +23,7 @@ function SidebarLogo() {
     return (
         <div className="sidebar-logo">
             <div className="logo-badge">
-                <div className="logo-icon">🪪</div>
+                <div className="logo-icon"><CreditCard size={20} strokeWidth={1.75} color="white" aria-hidden="true" /></div>
                 <div>
                     <div className="logo-text">AuxílioPay</div>
                     <div className="logo-sub">Gestão de Cartões</div>
@@ -47,7 +48,7 @@ function SidebarNav({ activePage, onNavigate, unreadCount }) {
                     aria-label={item.label}
                     onKeyDown={e => e.key === "Enter" && onNavigate(item.key)}
                 >
-                    <span className="icon">{item.icon}</span>
+                    <span className="icon"><Icon name={item.icon} size={16} /></span>
                     {item.label}
                     {item.key === "notificacoes" && unreadCount > 0 && (
                         <span className="nav-badge">{unreadCount}</span>
@@ -62,7 +63,7 @@ function SidebarNav({ activePage, onNavigate, unreadCount }) {
                 tabIndex={0}
                 aria-label="Configurações"
             >
-                <span className="icon">⚙️</span>Configurações
+                <span className="icon"><Icon name="settings" size={16} /></span>Configurações
             </div>
             <div 
                 className={`nav-item ${activePage === "ajuda" ? "active" : ""}`}
@@ -71,7 +72,7 @@ function SidebarNav({ activePage, onNavigate, unreadCount }) {
                 tabIndex={0} 
                 aria-label="Ajuda"
             >
-                <span className="icon">❓</span>Ajuda
+                <span className="icon"><Icon name="help" size={16} /></span>Ajuda
             </div>
         </nav>
     );

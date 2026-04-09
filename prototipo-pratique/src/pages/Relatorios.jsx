@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import { useAppContext } from "../context/AppContext";
 import { theme } from "../theme/theme";
+import { PackagePlus, PackageMinus, Clock, FileBarChart2, ClipboardList, Download, Users } from "../components/Icons";
 
 /**
  * Relatorios page: Date range filter, KPI summary, movements table, CSV export, top beneficiaries.
@@ -73,29 +74,29 @@ export default function Relatorios() {
                     <input id="date-to" type="date" className="form-control" value={to} onChange={e => setTo(e.target.value)} aria-label="Data final" />
                 </div>
                 <button className="btn btn-primary" onClick={handleExportCSV} style={{ marginTop: 18 }} aria-label="Exportar relatório CSV">
-                    📥 Exportar CSV
+                    <Download size={14} style={{marginRight:4}}/>Exportar CSV
                 </button>
             </div>
 
             {/* KPI Cards */}
             <div className="stats-grid">
                 <div className="stat-card blue">
-                    <div className="stat-icon">📤</div>
+                    <div className="stat-icon"><PackagePlus size={22} strokeWidth={1.75} /></div>
                     <div className="stat-value">{totalEntregas}</div>
                     <div className="stat-label">Entregas</div>
                 </div>
                 <div className="stat-card green">
-                    <div className="stat-icon">📥</div>
+                    <div className="stat-icon"><PackageMinus size={22} strokeWidth={1.75} /></div>
                     <div className="stat-value">{totalDevolucoes}</div>
                     <div className="stat-label">Devoluções</div>
                 </div>
                 <div className="stat-card amber">
-                    <div className="stat-icon">⏱️</div>
+                    <div className="stat-icon"><Clock size={22} strokeWidth={1.75} /></div>
                     <div className="stat-value">{avgReturnDays}d</div>
                     <div className="stat-label">Tempo Médio Devolução</div>
                 </div>
                 <div className="stat-card red">
-                    <div className="stat-icon">📊</div>
+                    <div className="stat-icon"><FileBarChart2 size={22} strokeWidth={1.75} /></div>
                     <div className="stat-value">{complianceRate}%</div>
                     <div className="stat-label">Taxa de Conformidade</div>
                 </div>
@@ -105,7 +106,7 @@ export default function Relatorios() {
                 {/* Movements Table */}
                 <div className="panel">
                     <div className="panel-header">
-                        <div className="panel-title">📋 Movimentações ({movFiltradas.length})</div>
+                        <div className="panel-title" style={{ display:"flex", alignItems:"center", gap:6 }}><ClipboardList size={15} />Movimentações ({movFiltradas.length})</div>
                     </div>
                     <div style={{ overflowX: "auto", maxHeight: 400 }}>
                         <table className="table">
@@ -143,7 +144,7 @@ export default function Relatorios() {
                 {/* Top Beneficiaries */}
                 <div className="panel">
                     <div className="panel-header">
-                        <div className="panel-title">🏆 Top Beneficiários</div>
+                        <div className="panel-title" style={{ display:"flex", alignItems:"center", gap:6 }}><Users size={15} />Top Beneficiários</div>
                     </div>
                     <div className="panel-body">
                         {topBeneficiarios.length === 0 && <div className="text-muted">Sem dados no período.</div>}

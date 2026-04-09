@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { useAppContext } from "../context/AppContext";
 import { theme } from "../theme/theme";
 import { Modal, EmptyState } from "../components";
+import { Search, Users, UserCircle, PackagePlus, PackageMinus, XCircle, History, AlertTriangle } from "../components/Icons";
 
 /**
  * Beneficiarios page: CRUD with search, filter, detail panel, and card history.
@@ -64,7 +65,7 @@ export default function Beneficiarios() {
             {/* Search + Filter + Add */}
             <div className="flex items-center gap-2 mb-4" style={{ flexWrap: "wrap" }}>
                 <div className="search-box" style={{ display: "flex", width: "auto", flex: 1, minWidth: 180 }}>
-                    <span>🔍</span>
+                    <span><Search size={14} color={theme.muted} /></span>
                     <input placeholder="Buscar beneficiário..." value={busca} onChange={e => setBusca(e.target.value)} aria-label="Buscar beneficiário" />
                 </div>
                 <select className="form-control" style={{ width: "auto" }} value={filtro} onChange={e => setFiltro(e.target.value)} aria-label="Filtrar por status">
@@ -79,7 +80,7 @@ export default function Beneficiarios() {
                 {/* List */}
                 <div style={{ flex: 1, minWidth: 0 }}>
                     {filtrados.length === 0 && (
-                        <EmptyState icon="👥" title="Nenhum beneficiário" description="Nenhum beneficiário corresponde à busca." ctaLabel="Adicionar" onCta={openAdd} />
+                        <EmptyState icon="users" title="Nenhum beneficiário" description="Nenhum beneficiário corresponde à busca." ctaLabel="Adicionar" onCta={openAdd} />
                     )}
                     {filtrados.map(b => (
                         <div
@@ -94,7 +95,7 @@ export default function Beneficiarios() {
                             <div className="flex items-center gap-2">
                                 <div style={{
                                     width: 36, height: 36, borderRadius: "50%",
-                                    background: `linear-gradient(135deg, ${theme.accent}, #A855F7)`,
+                                    background: `linear-gradient(135deg, var(--color-brand-deep), var(--color-brand-action))`,
                                     display: "flex", alignItems: "center", justifyContent: "center",
                                     fontSize: 13, fontWeight: 700, color: "white", flexShrink: 0,
                                 }}>
@@ -119,7 +120,7 @@ export default function Beneficiarios() {
                         borderRadius: 14, padding: 20, flexShrink: 0,
                     }}>
                         <div className="flex items-center gap-2 mb-4">
-                            <div className="panel-title" style={{ flex: 1 }}>👤 {selected.nome}</div>
+                            <div className="panel-title" style={{ flex: 1, display:"flex", alignItems:"center", gap:6 }}><UserCircle size={15} />{selected.nome}</div>
                             <button className="close-btn" onClick={() => setSelected(null)} aria-label="Fechar painel">×</button>
                         </div>
 
@@ -142,20 +143,20 @@ export default function Beneficiarios() {
                         <div className="divider" />
 
                         <div className="flex gap-2" style={{ marginBottom: 16 }}>
-                            <button className="btn btn-ghost btn-sm" onClick={() => openEdit(selected)} aria-label="Editar beneficiário">✏️ Editar</button>
+                            <button className="btn btn-ghost btn-sm" onClick={() => openEdit(selected)} aria-label="Editar beneficiário">Editar</button>
                             {selected.status === "ativo" && (
                                 <button className="btn btn-ghost btn-sm" style={{ color: theme.danger }} onClick={() => setConfirmDeactivate(selected)} aria-label="Desativar beneficiário">
-                                    ⛔ Desativar
+                                    <XCircle size={13} style={{marginRight:4}}/>Desativar
                                 </button>
                             )}
                         </div>
 
                         {/* Card History */}
-                        <div className="panel-title" style={{ fontSize: 12, marginBottom: 8 }}>📜 Histórico de Movimentações</div>
+                        <div className="panel-title" style={{ fontSize: 12, marginBottom: 8, display:"flex", alignItems:"center", gap:6 }}><History size={13} />Histórico de Movimentações</div>
                         {cardHistory.length === 0 && <div className="text-muted">Nenhuma movimentação encontrada.</div>}
                         {cardHistory.map(m => (
                             <div key={m.id} style={{ display: "flex", gap: 8, padding: "6px 0", borderBottom: `1px solid ${theme.border}`, fontSize: 11 }}>
-                                <span>{m.tipo === "entrega" ? "📤" : "📥"}</span>
+                                <span style={{marginRight:4}}>{m.tipo === "entrega" ? <PackagePlus size={13} /> : <PackageMinus size={13} />}</span>
                                 <div style={{ flex: 1 }}>
                                     <div>{m.cartaoId} — {m.tipo === "entrega" ? "Entrega" : "Devolução"}</div>
                                     <div className="text-muted">{m.data}</div>
@@ -169,7 +170,7 @@ export default function Beneficiarios() {
             {/* Add/Edit Modal */}
             {modalMode && (
                 <Modal
-                    title={modalMode === "add" ? "➕ Novo Beneficiário" : "✏️ Editar Beneficiário"}
+                    title={modalMode === "add" ? "Novo Beneficiário" : "Editar Beneficiário"}
                     onClose={() => setModalMode(null)}
                     footer={
                         <>
@@ -200,7 +201,7 @@ export default function Beneficiarios() {
             {/* Deactivate Confirmation */}
             {confirmDeactivate && (
                 <Modal
-                    title="⚠️ Confirmar Desativação"
+                    title="Confirmar Desativação"
                     onClose={() => setConfirmDeactivate(null)}
                     footer={
                         <>

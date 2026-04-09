@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo, useRef } from "react";
 import { useAppContext } from "../context/AppContext";
 import { theme } from "../theme/theme";
 import { ChartBars, SkeletonLoader, SkeletonStat } from "../components";
+import { Icon, CreditCard, CheckCircle2, PackagePlus, XCircle, BarChart3, ClipboardList, Clock, Bell, Activity } from "../components/Icons";
 
 /**
  * Dashboard page: KPI stats with count-up animation, donut chart,
@@ -36,7 +37,7 @@ export default function Dashboard({ onNav }) {
 
     const recentActivities = useMemo(() => movimentacoes.slice(0, 5).map(m => ({
         tipo: m.tipo === "entrega" ? "entrega" : "devolucao",
-        icon: m.tipo === "entrega" ? "📤" : "📥",
+        icon: m.tipo === "entrega" ? "card-deliver" : "card-return",
         texto: `Cartão ${m.cartaoId} ${m.tipo === "entrega" ? "entregue para" : "devolvido por"} ${m.beneficiario}`,
         tempo: m.data,
     })), [movimentacoes]);
@@ -46,23 +47,23 @@ export default function Dashboard({ onNav }) {
             <div className="page">
                 {/* Stats Cards with animated count-up */}
                 <div className="stats-grid">
-                    <AnimatedStatCard variant="blue" icon="🪪" value={total} label="Total de Cartões" change="↑ 12% este mês" changeType="up" />
-                    <AnimatedStatCard variant="green" icon="✅" value={entregues} label="Entregues" change="↑ 8% esta semana" changeType="up" />
-                    <AnimatedStatCard variant="amber" icon="🔓" value={disponiveis} label="Disponíveis" change="em estoque" changeType="" />
-                    <AnimatedStatCard variant="red" icon="⛔" value={bloqueados} label="Bloqueados" change="requer atenção" changeType="down" />
+                    <AnimatedStatCard variant="blue"  icon={<CreditCard  size={22} strokeWidth={1.75} />} value={total}       label="Total de Cartões" change="↑ 12% este mês" changeType="up" />
+                    <AnimatedStatCard variant="green" icon={<CheckCircle2 size={22} strokeWidth={1.75} />} value={entregues}   label="Entregues"        change="↑ 8% esta semana" changeType="up" />
+                    <AnimatedStatCard variant="amber" icon={<PackagePlus  size={22} strokeWidth={1.75} />} value={disponiveis} label="Disponíveis"       change="em estoque" changeType="" />
+                    <AnimatedStatCard variant="red"   icon={<XCircle      size={22} strokeWidth={1.75} />} value={bloqueados}   label="Bloqueados"       change="requer atenção" changeType="down" />
                 </div>
 
                 <div className="grid-3-1">
                     {/* Monthly Chart */}
                     <div className="panel">
                         <div className="panel-header">
-                            <div className="panel-title">📊 Movimentações por Mês</div>
+                            <div className="panel-title" style={{ display:"flex", alignItems:"center", gap:6 }}><BarChart3 size={15} />Movimentações por Mês</div>
                             <span className="chip">2025</span>
                         </div>
                         <div className="panel-body">
                             <div className="flex items-center gap-2 mb-2">
                                 <div style={{ fontSize: 24, fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700 }}>{movimentacoes.length}</div>
-                                <span className="chip" style={{ color: theme.success, borderColor: "rgba(16,201,143,0.3)", background: "rgba(16,201,143,0.1)" }}>↑ 14%</span>
+                                <span className="chip" style={{ color: "var(--color-success-700)", borderColor: "var(--color-success-border)", background: "var(--color-success-100)" }}>↑ 14%</span>
                             </div>
                             <div className="text-muted mb-4">Total de movimentações</div>
                             <ChartBars />
@@ -72,7 +73,7 @@ export default function Dashboard({ onNav }) {
                     {/* Status Overview + Donut Chart */}
                     <div className="panel">
                         <div className="panel-header">
-                            <div className="panel-title">📋 Distribuição por Tipo</div>
+                            <div className="panel-title" style={{ display:"flex", alignItems:"center", gap:6 }}><ClipboardList size={15} />Distribuição por Tipo</div>
                         </div>
                         <div className="panel-body">
                             <DonutChart data={typeDistribution} total={total} />
@@ -99,13 +100,13 @@ export default function Dashboard({ onNav }) {
                     {/* Activity Feed */}
                     <div className="panel">
                         <div className="panel-header">
-                            <div className="panel-title">🕐 Atividade Recente</div>
+                            <div className="panel-title" style={{ display:"flex", alignItems:"center", gap:6 }}><Clock size={15} />Atividade Recente</div>
                             <button className="btn btn-ghost btn-sm" aria-label="Ver toda atividade">Ver tudo</button>
                         </div>
                         <div className="panel-body" style={{ paddingTop: 8, paddingBottom: 8 }}>
                             {recentActivities.map((a, i) => (
                                 <div key={i} className="activity-item">
-                                    <div className={`activity-dot ${a.tipo}`}>{a.icon}</div>
+                                    <div className={`activity-dot ${a.tipo}`}><Icon name={a.icon} size={13} /></div>
                                     <div className="activity-content">
                                         <div className="activity-text">{a.texto}</div>
                                         <div className="activity-time">{a.tempo}</div>
@@ -118,13 +119,13 @@ export default function Dashboard({ onNav }) {
                     {/* Notifications Preview */}
                     <div className="panel">
                         <div className="panel-header">
-                            <div className="panel-title">🔔 Notificações</div>
+                            <div className="panel-title" style={{ display:"flex", alignItems:"center", gap:6 }}><Bell size={15} />Notificações</div>
                             <span className="nav-badge" style={{ fontSize: 11 }}>{notificacoes.filter(n => n.unread).length}</span>
                         </div>
                         <div className="panel-body" style={{ paddingTop: 8, paddingBottom: 8 }}>
                             {notificacoes.slice(0, 4).map((n, i) => (
                                 <div key={n.id || i} className={`notif-item ${n.unread ? "notif-unread" : ""}`}>
-                                    <div className="notif-icon">{n.icon}</div>
+                                    <div className="notif-icon"><Icon name={n.icon} size={16} /></div>
                                     <div>
                                         <div className="notif-text">{n.texto}</div>
                                         <div className="notif-meta">{n.meta}</div>
@@ -138,7 +139,7 @@ export default function Dashboard({ onNav }) {
                 {/* Recent Deliveries mini-table */}
                 <div className="panel">
                     <div className="panel-header">
-                        <div className="panel-title">📤 Entregas Recentes</div>
+                        <div className="panel-title" style={{ display:"flex", alignItems:"center", gap:6 }}><PackagePlus size={15} />Entregas Recentes</div>
                     </div>
                     <div style={{ overflowX: "auto" }}>
                         <table className="table">

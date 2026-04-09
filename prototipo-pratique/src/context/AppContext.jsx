@@ -69,7 +69,7 @@ function appReducer(state, action) {
                     ...state.auditoria,
                 ],
                 notificacoes: [
-                    { id: nextNotId(), icon: "📤", texto: `Cartão ${cartaoId} entregue para ${beneficiario}`, meta: `Sistema • agora`, unread: true },
+                    { id: nextNotId(), icon: "card-deliver", texto: `Cartão ${cartaoId} entregue para ${beneficiario}`, meta: `Sistema • agora`, unread: true },
                     ...state.notificacoes,
                 ],
                 notificacoesBeneficiario: [
@@ -109,7 +109,7 @@ function appReducer(state, action) {
                     ...state.auditoria,
                 ],
                 notificacoes: [
-                    { id: nextNotId(), icon: "📥", texto: `Cartão ${cartaoId} devolvido por ${beneficiario} — ${condicao}`, meta: `Sistema • agora`, unread: true },
+                    { id: nextNotId(), icon: "card-return", texto: `Cartão ${cartaoId} devolvido por ${beneficiario} — ${condicao}`, meta: `Sistema • agora`, unread: true },
                     ...state.notificacoes,
                 ],
                 notificacoesBeneficiario: [

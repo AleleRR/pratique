@@ -1,7 +1,9 @@
 import { useState, useRef, useEffect } from "react";
+import React from "react";
 import { useAppContext } from "../context/AppContext";
 import { theme } from "../theme/theme";
 import { Badge } from "../components";
+import { UserCircle, CreditCard, CheckCircle2, Info, Lock, FileCheck } from "../components/Icons";
 
 /**
  * NovaEntrega page: Multi-step wizard with CPF validation,
@@ -11,7 +13,8 @@ import { Badge } from "../components";
 const INITIAL_FORM = { beneficiario: "", cpf: "", cartao: "", tipo: "Alimentação", observacao: "" };
 const BENEFIT_TYPES = ["Alimentação", "Transporte", "Saúde", "Educação"];
 const STEP_LABELS = ["Beneficiário", "Cartão", "Confirmação"];
-const STEP_TITLES = ["👤 Dados do Beneficiário", "🪪 Selecionar Cartão", "✅ Confirmar Entrega"];
+const STEP_ICONS = [UserCircle, CreditCard, CheckCircle2];
+const STEP_TITLES = ["Dados do Beneficiário", "Selecionar Cartão", "Confirmar Entrega"];
 const TOTAL_STEPS = 3;
 const SUCCESS_TIMEOUT_MS = 3000;
 const RESPONSAVEL = "Admin João";
@@ -79,7 +82,10 @@ export default function NovaEntrega() {
             <StepIndicator currentStep={step} />
             <div className="panel">
                 <div className="panel-header">
-                    <div className="panel-title">{STEP_TITLES[step - 1]}</div>
+                    <div className="panel-title" style={{ display:"flex", alignItems:"center", gap:6 }}>
+                        {STEP_ICONS[step - 1] && React.createElement(STEP_ICONS[step - 1], { size: 15 })}
+                        {STEP_TITLES[step - 1]}
+                    </div>
                 </div>
                 <div className="panel-body">
                     {step === 1 && (
@@ -127,7 +133,7 @@ function SuccessScreen() {
             <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 22, fontWeight: 700 }}>Entrega Registrada!</div>
             <div className="text-muted">Comprovante sendo gerado automaticamente...</div>
             <div className="alert alert-success" style={{ marginTop: 8 }}>
-                <div className="alert-icon">📄</div>
+                <div className="alert-icon"><FileCheck size={15} /></div>
                 <div>Comprovante PDF gerado e enviado por e-mail para o responsável.</div>
             </div>
         </div>
@@ -183,7 +189,7 @@ function StepCartao({ cartoes, selectedCartao, onSelect, onBack, onNext, selecte
     return (
         <>
             <div className="alert alert-warning">
-                <div className="alert-icon">ℹ️</div>
+                <div className="alert-icon"><Info size={15} /></div>
                 <div>Apenas cartões <strong>disponíveis</strong> aparecem. Cada cartão só pode ter um responsável ativo.</div>
             </div>
             {available.map(c => {
@@ -194,7 +200,9 @@ function StepCartao({ cartoes, selectedCartao, onSelect, onBack, onNext, selecte
                         marginBottom: 10, cursor: "pointer", background: isSelected ? theme.accentGlow : theme.subtle, transition: "all 0.15s",
                     }}>
                         <div className="flex items-center gap-2">
-                            <div style={{ fontSize: 20 }}>🪪</div>
+                            <div style={{ display:"flex", alignItems:"center", justifyContent:"center", width:28, height:28, color: theme.accent }}>
+                                <CreditCard size={20} strokeWidth={1.75} />
+                            </div>
                             <div>
                                 <div className="font-bold" style={{ fontSize: 13 }}>{c.id}</div>
                                 <div className="text-muted">{c.numero} · {c.tipo} · {c.valor}</div>
@@ -307,12 +315,14 @@ function StepConfirmacao({ form, onUpdate, onBack, onSubmit }) {
                 />
             </div>
             <div className="alert alert-success">
-                <div className="alert-icon">🔒</div>
+                <div className="alert-icon"><Lock size={15} /></div>
                 <div>Dados criptografados com AES-256. Comprovante PDF será gerado automaticamente.</div>
             </div>
             <div className="flex gap-2">
                 <button className="btn btn-ghost" onClick={onBack} aria-label="Voltar">← Voltar</button>
-                <button className="btn btn-success" style={{ flex: 1, justifyContent: "center" }} onClick={onSubmit} aria-label="Confirmar entrega">✅ Confirmar Entrega</button>
+                <button className="btn btn-success" style={{ flex: 1, justifyContent: "center" }} onClick={onSubmit} aria-label="Confirmar entrega">
+                    <CheckCircle2 size={15} style={{ marginRight: 6 }} />Confirmar Entrega
+                </button>
             </div>
         </>
     );

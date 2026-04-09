@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useAppContext } from "../../context/AppContext";
-import { theme } from "../../theme/theme";
 
 /**
  * ToastContainer: Fixed-position container that renders active toasts.
@@ -10,10 +9,10 @@ import { theme } from "../../theme/theme";
 const TOAST_DURATION = 4000;
 
 const TOAST_CONFIG = {
-    success: { icon: "✅", color: theme.success, bg: "rgba(16,201,143,0.15)", border: "rgba(16,201,143,0.3)" },
-    warning: { icon: "⚠️", color: theme.warning, bg: "rgba(245,158,11,0.15)", border: "rgba(245,158,11,0.3)" },
-    error: { icon: "❌", color: theme.danger, bg: "rgba(239,68,68,0.15)", border: "rgba(239,68,68,0.3)" },
-    info: { icon: "ℹ️", color: theme.accent, bg: "rgba(59,110,248,0.15)", border: "rgba(59,110,248,0.3)" },
+    success: { icon: "✅", color: "var(--color-success-700)", bg: "var(--color-success-100)", border: "var(--color-success-border)" },
+    warning: { icon: "⚠️", color: "var(--color-warning-700)", bg: "var(--color-warning-100)", border: "var(--color-warning-border)" },
+    error:   { icon: "❌", color: "var(--color-error-700)",   bg: "var(--color-error-100)",   border: "var(--color-error-border)" },
+    info:    { icon: "ℹ️", color: "var(--color-brand-action)", bg: "var(--color-brand-subtle)", border: "var(--color-brand-light)" },
 };
 
 function ToastItem({ toast, onDismiss }) {

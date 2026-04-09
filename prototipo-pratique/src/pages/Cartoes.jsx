@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { useAppContext } from "../context/AppContext";
 import { theme } from "../theme/theme";
 import { Badge, StatusTracker, Modal, EmptyState } from "../components";
+import { Search, CreditCard, Eye, XCircle, FileCheck, History, PackagePlus, PackageMinus } from "../components/Icons";
 
 /**
  * Cartoes page: Card inventory with sorting, pagination, quick actions,
@@ -81,7 +82,7 @@ export default function Cartoes() {
         <div className="page">
             <div className="flex items-center gap-2 mb-4" style={{ flexWrap: "wrap" }}>
                 <div className="search-box" style={{ display: "flex", width: "auto", flex: 1, minWidth: 180 }}>
-                    <span>🔍</span>
+                    <span><Search size={14} color={theme.muted} /></span>
                     <input placeholder="Buscar cartão ou beneficiário..." value={busca} onChange={e => { setBusca(e.target.value); setPage(0); }} aria-label="Buscar cartão" />
                 </div>
                 <select className="form-control" style={{ width: "auto" }} value={filtro} onChange={e => { setFiltro(e.target.value); setPage(0); }} aria-label="Filtrar por status">
@@ -95,7 +96,7 @@ export default function Cartoes() {
 
             <div className="panel">
                 <div className="panel-header">
-                    <div className="panel-title">🪪 Cartões ({filtrados.length})</div>
+                    <div className="panel-title" style={{ display:"flex", alignItems:"center", gap:6 }}><CreditCard size={15} />Cartões ({filtrados.length})</div>
                 </div>
                 <div style={{ overflowX: "auto" }}>
                     <table className="table" style={{ padding: "0 20px" }}>
@@ -132,9 +133,9 @@ export default function Cartoes() {
                                         </button>
                                         {actionsOpen === c.id && (
                                             <div className="quick-actions-menu" onClick={e => e.stopPropagation()}>
-                                                <div className="quick-action" onClick={() => { setSelected(c); setActionsOpen(null); }}>👁️ Ver Detalhes</div>
+                                                <div className="quick-action" onClick={() => { setSelected(c); setActionsOpen(null); }}><Eye size={13} style={{marginRight:4}}/>Ver Detalhes</div>
                                                 {c.status !== "bloqueado" && (
-                                                    <div className="quick-action" onClick={() => handleBlock(c)}>⛔ Bloquear</div>
+                                                    <div className="quick-action" onClick={() => handleBlock(c)}><XCircle size={13} style={{marginRight:4}}/>Bloquear</div>
                                                 )}
                                             </div>
                                         )}
@@ -145,7 +146,7 @@ export default function Cartoes() {
                     </table>
 
                     {filtrados.length === 0 && (
-                        <EmptyState icon="🔍" title="Nenhum resultado" description="Tente buscar por outro termo." />
+                        <EmptyState icon="search" title="Nenhum resultado" description="Tente buscar por outro termo." />
                     )}
                 </div>
 
@@ -167,7 +168,7 @@ export default function Cartoes() {
                     footer={
                         <>
                             <button className="btn btn-ghost" onClick={() => setSelected(null)} aria-label="Fechar detalhes">Fechar</button>
-                            <button className="btn btn-primary" aria-label="Gerar comprovante">📄 Gerar Comprovante</button>
+                            <button className="btn btn-primary" aria-label="Gerar comprovante"><FileCheck size={13} style={{marginRight:4}}/>Gerar Comprovante</button>
                         </>
                     }
                 >
@@ -190,12 +191,12 @@ export default function Cartoes() {
                     {cardHistory.length > 0 && (
                         <>
                             <div className="divider" />
-                            <div className="panel-title" style={{ fontSize: 12, marginBottom: 8 }}>📜 Histórico</div>
+                            <div className="panel-title" style={{ fontSize: 12, marginBottom: 8, display:"flex", alignItems:"center", gap:6 }}><History size={13} />Histórico</div>
                             {cardHistory.map(m => (
                                 <div key={m.id} style={{ display: "flex", gap: 10, padding: "6px 0", borderLeft: `2px solid ${m.tipo === "entrega" ? theme.success : theme.accent}`, paddingLeft: 12, marginLeft: 8, marginBottom: 4 }}>
                                     <div>
                                         <div style={{ fontSize: 12, fontWeight: 600 }}>
-                                            {m.tipo === "entrega" ? "📤 Entrega" : "📥 Devolução"}
+                                            {m.tipo === "entrega" ? <span style={{ display:"inline-flex", alignItems:"center", gap:4 }}><PackagePlus size={12} />Entrega</span> : <span style={{ display:"inline-flex", alignItems:"center", gap:4 }}><PackageMinus size={12} />Devolução</span>}
                                             {m.condicao && ` — ${m.condicao}`}
                                         </div>
                                         <div className="text-muted">{m.data} · {m.responsavel}</div>

@@ -1,13 +1,14 @@
 /**
  * Badge component: Displays a colored status pill.
  *
- * @param {{ status: "entregue" | "disponivel" | "bloqueado" | "pendente" }} props
+ * @param {{ status: "entregue" | "disponivel" | "bloqueado" | "pendente" | "devolvido" }} props
  */
 const STATUS_LABELS = {
-    entregue: "Entregue",
+    entregue:  "Entregue",
     disponivel: "Disponível",
     bloqueado: "Bloqueado",
-    pendente: "Pendente",
+    pendente:  "Pendente",
+    devolvido: "Devolvido",
 };
 
 export default function Badge({ status }) {

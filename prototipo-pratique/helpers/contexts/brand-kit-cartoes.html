@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kit de Marca — Sistema de Cartões de Auxílio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* === PALETA PRIMÁRIA === */
+    --azul-institucional:   #1A3A5C;
+    --azul-acao:            #1E6FA6;
+    --azul-hover:           #155E8E;
+    --azul-claro:           #D6E8F5;
+    --azul-sutil:           #EBF4FA;
+
+    /* === NEUTROS (superfícies) === */
+    --cinza-900:  #111827;
+    --cinza-800:  #1F2937;
+    --cinza-700:  #374151;
+    --cinza-500:  #6B7280;
+    --cinza-300:  #D1D5DB;
+    --cinza-200:  #E5E7EB;
+    --cinza-100:  #F3F4F6;
+    --cinza-050:  #F9FAFB;
+    --branco:     #FFFFFF;
+
+    /* === SEMÂNTICAS === */
+    --sucesso:    #166534;
+    --sucesso-bg: #DCFCE7;
+    --erro:       #991B1B;
+    --erro-bg:    #FEE2E2;
+    --alerta:     #92400E;
+    --alerta-bg:  #FEF3C7;
+    --info:       #1E3A5F;
+    --info-bg:    #DBEAFE;
+
+    --fonte-heading: 'Space Grotesk', sans-serif;
+    --fonte-body:    'IBM Plex Sans', sans-serif;
+    --fonte-mono:    'IBM Plex Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--fonte-body);
+    background: var(--cinza-050);
+    color: var(--cinza-900);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* CAPA */
+  .capa {
+    background: var(--azul-institucional);
+    padding: 80px 60px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .capa::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .capa::after {
+    content: '';
+    position: absolute;
+    bottom: -120px; right: 60px;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .capa-badge {
+    display: inline-block;
+    font-family: var(--fonte-mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 4px 12px;
+    border-radius: 2px;
+    margin-bottom: 32px;
+  }
+  .capa h1 {
+    font-family: var(--fonte-heading);
+    font-size: 42px;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    max-width: 600px;
+    margin-bottom: 16px;
+  }
+  .capa h1 strong { font-weight: 600; }
+  .capa-sub {
+    color: rgba(255,255,255,0.55);
+    font-size: 14px;
+    max-width: 480px;
+  }
+  .capa-meta {
+    margin-top: 48px;
+    display: flex;
+    gap: 40px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    font-family: var(--fonte-mono);
+  }
+  .capa-meta span strong { color: rgba(255,255,255,0.7); display: block; }
+
+  /* NAVEGAÇÃO */
+  .nav-toc {
+    background: var(--branco);
+    border-bottom: 1px solid var(--cinza-200);
+    padding: 12px 60px;
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+  }
+  .nav-toc a {
+    font-size: 12px;
+    font-family: var(--fonte-mono);
+    color: var(--cinza-500);
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 3px;
+    white-space: nowrap;
+    transition: all 0.15s;
+  }
+  .nav-toc a:hover { background: var(--cinza-100); color: var(--cinza-800); }
+
+  /* SEÇÕES */
+  .section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 72px 60px;
+    border-bottom: 1px solid var(--cinza-200);
+  }
+  .section:last-child { border-bottom: none; }
+
+  .section-label {
+    font-family: var(--fonte-mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--azul-acao);
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-family: var(--fonte-heading);
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--cinza-900);
+    margin-bottom: 12px;
+  }
+  .section-desc {
+    color: var(--cinza-500);
+    max-width: 640px;
+    margin-bottom: 48px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* ========================
+     1. PALETA DE CORES
+  ======================== */
+  .paleta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+  }
+  .cor-card {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--cinza-200);
+  }
+  .cor-swatch {
+    height: 80px;
+  }
+  .cor-info {
+    padding: 10px 12px;
+    background: var(--branco);
+  }
+  .cor-nome {
+    font-family: var(--fonte-heading);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--cinza-800);
+    display: block;
+    margin-bottom: 2px;
+  }
+  .cor-hex {
+    font-family: var(--fonte-mono);
+    font-size: 11px;
+    color: var(--cinza-500);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .cor-uso {
+    font-size: 10px;
+    color: var(--cinza-500);
+    line-height: 1.4;
+  }
+
+  .paleta-secao-titulo {
+    font-family: var(--fonte-heading);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--cinza-700);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 32px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--cinza-200);
+  }
+
+  .semantica-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .sem-card {
+    display: flex;
+    align-items: stretch;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--cinza-200);
+  }
+  .sem-stripe { width: 6px; flex-shrink: 0; }
+  .sem-body { padding: 12px 16px; }
+  .sem-label {
+    font-family: var(--fonte-heading);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--cinza-800);
+  }
+  .sem-hex {
+    font-family: var(--fonte-mono);
+    font-size: 10px;
+    color: var(--cinza-500);
+    margin-top: 2px;
+  }
+  .sem-just {
+    font-size: 11px;
+    color: var(--cinza-500);
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+
+  /* ========================
+     2. TIPOGRAFIA
+  ======================== */
+  .tipo-demo {
+    background: var(--branco);
+    border: 1px solid var(--cinza-200);
+    border-radius: 8px;
+    padding: 40px;
+    margin-bottom: 24px;
+  }
+  .tipo-meta {
+    font-family: var(--fonte-mono);
+    font-size: 10px;
+    color: var(--cinza-500);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid var(--cinza-100);
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+  }
+
+  .tipo-h1 { font-family: var(--fonte-heading); font-size: 32px; font-weight: 600; letter-spacing: -0.03em; color: var(--cinza-900); line-height: 1.15; margin-bottom: 8px; }
+  .tipo-h2 { font-family: var(--fonte-heading); font-size: 22px; font-weight: 500; letter-spacing: -0.02em; color: var(--cinza-800); line-height: 1.2; margin-bottom: 8px; }
+  .tipo-h3 { font-family: var(--fonte-heading); font-size: 16px; font-weight: 600; color: var(--cinza-800); letter-spacing: -0.01em; margin-bottom: 8px; }
+  .tipo-body { font-family: var(--fonte-body); font-size: 14px; color: var(--cinza-700); line-height: 1.65; margin-bottom: 8px; }
+  .tipo-caption { font-family: var(--fonte-body); font-size: 12px; color: var(--cinza-500); line-height: 1.5; }
+  .tipo-mono { font-family: var(--fonte-mono); font-size: 13px; color: var(--cinza-700); background: var(--cinza-100); padding: 2px 6px; border-radius: 3px; }
+
+  .tipo-spec {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+  }
+  .tipo-spec span {
+    font-family: var(--fonte-mono);
+    font-size: 10px;
+    color: var(--cinza-500);
+    background: var(--cinza-100);
+    padding: 2px 8px;
+    border-radius: 2px;
+  }
+
+  .font-showcase {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .font-card {
+    background: var(--branco);
+    border: 1px solid var(--cinza-200);
+    border-radius: 8px;
+    padding: 24px;
+  }
+  .font-amostra {
+    font-size: 28px;
+    font-weight: 300;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .font-tag {
+    display: inline-block;
+    font-family: var(--fonte-mono);
+    font-size: 10px;
+    background: var(--azul-sutil);
+    color: var(--azul-acao);
+    padding: 3px 8px;
+    border-radius: 3px;
+    margin-bottom: 8px;
+  }
+  .font-uso { font-size: 11px; color: var(--cinza-500); line-height: 1.5; }
+
+  /* ========================
+     3. ICONOGRAFIA
+  ======================== */
+  .icone-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+  .icone-card {
+    background: var(--branco);
+    border: 1px solid var(--cinza-200);
+    border-radius: 8px;
+    padding: 24px 16px;
+    text-align: center;
+  }
+  .icone-svg-wrap {
+    width: 56px;
+    height: 56px;
+    background: var(--azul-sutil);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+  }
+  .icone-svg-wrap svg {
+    width: 26px;
+    height: 26px;
+    stroke: var(--azul-acao);
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .icone-nome {
+    font-family: var(--fonte-heading);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--cinza-800);
+    margin-bottom: 4px;
+  }
+  .icone-metafora {
+    font-size: 11px;
+    color: var(--cinza-500);
+    line-height: 1.4;
+  }
+
+  .icone-regras {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  .regra-card {
+    background: var(--branco);
+    border: 1px solid var(--cinza-200);
+    border-radius: 8px;
+    padding: 20px;
+  }
+  .regra-titulo {
+    font-family: var(--fonte-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--azul-acao);
+    margin-bottom: 8px;
+  }
+  .regra-valor {
+    font-family: var(--fonte-heading);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--cinza-900);
+    margin-bottom: 4px;
+  }
+  .regra-desc { font-size: 12px; color: var(--cinza-500); }
+
+  /* ========================
+     4. UX WRITING
+  ======================== */
+  .glossario-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--branco);
+    border: 1px solid var(--cinza-200);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 40px;
+  }
+  .glossario-table th {
+    background: var(--cinza-100);
+    font-family: var(--fonte-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--cinza-600);
+    padding: 10px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--cinza-200);
+  }
+  .glossario-table td {
+    padding: 12px 16px;
+    font-size: 13px;
+    border-bottom: 1px solid var(--cinza-100);
+    vertical-align: top;
+  }
+  .glossario-table tr:last-child td { border-bottom: none; }
+  .glossario-table td:first-child {
+    font-family: var(--fonte-mono);
+    color: var(--cinza-700);
+    width: 22%;
+  }
+  .glossario-table td:nth-child(2) {
+    color: var(--erro);
+    font-size: 12px;
+    width: 20%;
+    text-decoration: line-through;
+    text-decoration-color: rgba(153,27,27,0.4);
+  }
+  .glossario-table td:nth-child(3) {
+    color: var(--sucesso);
+    font-size: 12px;
+    font-weight: 600;
+    width: 20%;
+  }
+  .glossario-table td:nth-child(4) { color: var(--cinza-500); font-size: 12px; }
+
+  .cta-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--branco);
+    border: 1px solid var(--cinza-200);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 40px;
+  }
+  .cta-table th {
+    background: var(--cinza-100);
+    font-family: var(--fonte-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--cinza-600);
+    padding: 10px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--cinza-200);
+  }
+  .cta-table td {
+    padding: 12px 16px;
+    font-size: 13px;
+    border-bottom: 1px solid var(--cinza-100);
+    vertical-align: top;
+  }
+  .cta-table tr:last-child td { border-bottom: none; }
+
+  .btn-preview {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: var(--azul-acao);
+    color: white;
+    border-radius: 5px;
+    font-family: var(--fonte-body);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: default;
+    white-space: nowrap;
+  }
+  .btn-preview.ghost {
+    background: transparent;
+    color: var(--azul-acao);
+    border: 1px solid var(--azul-acao);
+  }
+  .btn-preview.danger {
+    background: var(--erro-bg);
+    color: var(--erro);
+    border: 1px solid rgba(153,27,27,0.2);
+  }
+
+  /* Mensagens de feedback */
+  .feedback-stack { display: flex; flex-direction: column; gap: 16px; }
+  .feedback-msg {
+    border-radius: 8px;
+    padding: 16px 20px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .fb-erro { background: var(--erro-bg); border: 1px solid rgba(153,27,27,0.2); }
+  .fb-alerta { background: var(--alerta-bg); border: 1px solid rgba(146,64,14,0.2); }
+  .fb-sucesso { background: var(--sucesso-bg); border: 1px solid rgba(22,101,52,0.2); }
+  .fb-icone {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .fb-titulo {
+    font-family: var(--fonte-heading);
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .fb-erro .fb-titulo { color: var(--erro); }
+  .fb-alerta .fb-titulo { color: var(--alerta); }
+  .fb-sucesso .fb-titulo { color: var(--sucesso); }
+  .fb-corpo { font-size: 13px; line-height: 1.55; }
+  .fb-erro .fb-corpo { color: #7F1D1D; }
+  .fb-alerta .fb-corpo { color: #78350F; }
+  .fb-sucesso .fb-corpo { color: #14532D; }
+  .fb-acao {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .fb-erro .fb-acao { color: var(--erro); }
+  .fb-alerta .fb-acao { color: var(--alerta); }
+  .fb-heuristica {
+    margin-top: 8px;
+    font-family: var(--fonte-mono);
+    font-size: 10px;
+    opacity: 0.7;
+  }
+
+  /* FOOTER */
+  .guide-footer {
+    background: var(--cinza-900);
+    color: rgba(255,255,255,0.4);
+    padding: 32px 60px;
+    font-family: var(--fonte-mono);
+    font-size: 11px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .guide-footer span { color: rgba(255,255,255,0.7); }
+
+  @media (max-width: 768px) {
+    .capa { padding: 48px 24px; }
+    .section { padding: 48px 24px; }
+    .icone-grid { grid-template-columns: repeat(2, 1fr); }
+    .icone-regras { grid-template-columns: 1fr; }
+    .font-showcase { grid-template-columns: 1fr; }
+    .semantica-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- CAPA -->
+<header class="capa">
+  <div class="capa-badge">v1.0 · Guia de Identidade Visual e UX</div>
+  <h1><strong>Kit de Marca</strong><br>Sistema de Cartões de Auxílio</h1>
+  <p class="capa-sub">Design System institucional para o painel de controle do Administrador. Focado em densidade com clareza, conformidade LGPD e fluxos de auditoria.</p>
+  <div class="capa-meta">
+    <div><strong>Versão</strong>1.0 · Abril 2026</div>
+    <div><strong>Audiência</strong>Dev 3 · Dev 4</div>
+    <div><strong>Sprint Alvo</strong>Sprint 1 — Semanas 1–2</div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav class="nav-toc">
+  <a href="#cores">01 · Paleta</a>
+  <a href="#tipografia">02 · Tipografia</a>
+  <a href="#icones">03 · Iconografia</a>
+  <a href="#uxwriting">04 · UX Writing</a>
+</nav>
+
+<!-- 1. PALETA -->
+<section class="section" id="cores">
+  <div class="section-label">01 · Paleta de Cores</div>
+  <h2 class="section-title">Identidade cromática baseada em IHC</h2>
+  <p class="section-desc">Paleta calibrada para operadores em turnos prolongados. Fundamentada nos princípios WCAG 2.2 AA (razão de contraste mínima 4.5:1 para texto comum, 7:1 para texto crítico em logs de auditoria). Reduz carga cognitiva ao reservar cor apenas para estados e hierarquia.</p>
+
+  <div class="paleta-secao-titulo">Cores Primárias — Ação e Identidade</div>
+  <div class="paleta-grid">
+    <div class="cor-card">
+      <div class="cor-swatch" style="background:#1A3A5C;"></div>
+      <div class="cor-info">
+        <span class="cor-nome">Azul Institucional</span>
+        <span class="cor-hex">#1A3A5C</span>
+        <span class="cor-uso">Sidebar, cabeçalhos de seção, elementos de identidade da plataforma.</span>
+      </div>
+    </div>
+    <div class="cor-card">
+      <div class="cor-swatch" style="background:#1E6FA6;"></div>
+      <div class="cor-info">
+        <span class="cor-nome">Azul Ação</span>
+        <span class="cor-hex">#1E6FA6</span>
+        <span class="cor-uso">Botões primários, links, indicadores de foco. Contraste 4.78:1 sobre branco.</span>
+      </div>
+    </div>
+    <div class="cor-card">
+      <div class="cor-swatch" style="background:#155E8E;"></div>
+      <div class="cor-info">
+        <span class="cor-nome">Azul Hover</span>
+        <span class="cor-hex">#155E8E</span>
+        <span class="cor-uso">Estado hover dos botões primários. Fornece feedback tátil claro.</span>
+      </div>
+    </div>
+    <div class="cor-card">
+      <div class="cor-swatch" style="background:#D6E8F5;"></div>
+      <div class="cor-info">
+        <span class="cor-nome">Azul Claro</span>
+        <span class="cor-hex">#D6E8F5</span>
+        <span class="cor-uso">Badges de status informativo, linhas de tabela em hover, destaques.</span>
+      </div>
+    </div>
+    <div class="cor-card">
+      <div class="cor-swatch" style="background:#EBF4FA;"></div>
+      <div class="cor-info">
+        <span class="cor-nome">Azul Sutil</span>
+        <span class="cor-hex">#EBF4FA</span>
+        <span class="cor-uso">Fundos de cards de ícones, áreas de destaque sutil, tooltips.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="paleta-secao-titulo">Neutros — Superfícies e Hierarquia de Conteúdo</div>
+  <div class="paleta-grid">
+    <div class="cor-card">
+      <div class="cor-swatch" style="background:#111827;"></div>
+      <div class="cor-info">
+        <span class="cor-nome">Cinza 900</span>
+        <span class="cor-hex">#111827</span>
+        <span class="cor-uso">Texto de headings, valores críticos em tabelas de auditoria.</span>
+      </div>
+    </div>
+    <div class="cor-card">
+      <div class="cor-swatch" style="background:#374151;"></div>
+      <div class="cor-info">
+        <span class="cor-nome">Cinza 700</span>
+        <span class="cor-hex">#374151</span>
+        <span class="cor-uso">Texto de corpo, labels de formulário, conteúdo principal.</span>
+      </div>
+    </div>
+    <div class="cor-card">
+      <div class="cor-swatch" style="background:#6B7280;"></div>
+      <div class="cor-info">
+        <span class="cor-nome">Cinza 500</span>
+        <span class="cor-hex">#6B7280</span>
+        <span class="cor-uso">Texto auxiliar, placeholders, timestamps em logs.</span>
+      </div>
+    </div>
+    <div class="cor-card">
+      <div class="cor-swatch" style="background:#E5E7EB;"></div>
+      <div class="cor-info">
+        <span class="cor-nome">Cinza 200</span>
+        <span class="cor-hex">#E5E7EB</span>
+        <span class="cor-uso">Bordas de cards, divisores de tabela, separadores.</span>
+      </div>
+    </div>
+    <div class="cor-card">
+      <div class="cor-swatch" style="background:#F3F4F6; border:1px solid #E5E7EB;"></div>
+      <div class="cor-info">
+        <span class="cor-nome">Cinza 100</span>
+        <span class="cor-hex">#F3F4F6</span>
+        <span class="cor-uso">Fundos de campos de input, cabeçalhos de tabela, estados desabilitados.</span>
+      </div>
+    </div>
+    <div class="cor-card">
+      <div class="cor-swatch" style="background:#F9FAFB; border:1px solid #E5E7EB;"></div>
+      <div class="cor-info">
+        <span class="cor-nome">Cinza 050</span>
+        <span class="cor-hex">#F9FAFB</span>
+        <span class="cor-uso">Fundo global do painel. Cria separação visual sutil entre áreas.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="paleta-secao-titulo">Cores Semânticas — Estados do Sistema</div>
+  <div class="semantica-grid">
+    <div class="sem-card">
+      <div class="sem-stripe" style="background:#166534;"></div>
+      <div class="sem-body">
+        <div class="sem-label">✓ Sucesso</div>
+        <div class="sem-hex">Texto: #166534 · Fundo: #DCFCE7</div>
+        <div class="sem-just">Entrega confirmada, devolução registrada com sucesso, comprovante gerado. Contraste 7.2:1 — cumpre WCAG AAA.</div>
+      </div>
+    </div>
+    <div class="sem-card">
+      <div class="sem-stripe" style="background:#991B1B;"></div>
+      <div class="sem-body">
+        <div class="sem-label">✕ Erro Crítico</div>
+        <div class="sem-hex">Texto: #991B1B · Fundo: #FEE2E2</div>
+        <div class="sem-just">Falha de validação, cartão não encontrado, violação de unicidade de responsabilidade (RF-05). Não use apenas a cor — sempre adicione ícone e texto.</div>
+      </div>
+    </div>
+    <div class="sem-card">
+      <div class="sem-stripe" style="background:#92400E;"></div>
+      <div class="sem-body">
+        <div class="sem-label">⚠ Alerta</div>
+        <div class="sem-hex">Texto: #92400E · Fundo: #FEF3C7</div>
+        <div class="sem-just">Prazo de devolução próximo, notificação pendente, cartão sem movimentação há mais de 30 dias. Chama atenção sem interromper o fluxo.</div>
+      </div>
+    </div>
+    <div class="sem-card">
+      <div class="sem-stripe" style="background:#1E3A5F;"></div>
+      <div class="sem-body">
+        <div class="sem-label">ℹ Informação</div>
+        <div class="sem-hex">Texto: #1E3A5F · Fundo: #DBEAFE</div>
+        <div class="sem-just">Dicas contextuais, avisos de auditoria em andamento, campos criptografados pela LGPD. Tom neutro que informa sem alarmar.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. TIPOGRAFIA -->
+<section class="section" id="tipografia">
+  <div class="section-label">02 · Tipografia & Arquitetura de Informação</div>
+  <h2 class="section-title">Hierarquia tipográfica para ambientes de alta densidade</h2>
+  <p class="section-desc">Três famílias com funções distintas. Space Grotesk ancora a identidade nos títulos com personalidade geométrica. IBM Plex Sans oferece legibilidade neutra e prolongada em formulários e tabelas. IBM Plex Mono garante alinhamento perfeito em timestamps, números de série e hashes criptográficos.</p>
+
+  <div class="font-showcase">
+    <div class="font-card">
+      <div class="font-tag">Headings / Display</div>
+      <div class="font-amostra" style="font-family:'Space Grotesk',sans-serif; font-weight:600; color:#111827;">Space Grotesk</div>
+      <p class="font-uso">Títulos de páginas, seções do painel, labels de cards de KPI. Geométrica e moderna — comunica autoridade técnica sem frieza excessiva. Usada em peso 300–700.</p>
+    </div>
+    <div class="font-card">
+      <div class="font-tag">Body / Interface</div>
+      <div class="font-amostra" style="font-family:'IBM Plex Sans',sans-serif; font-weight:400; color:#111827;">IBM Plex Sans</div>
+      <p class="font-uso">Corpo de texto, labels de formulário, conteúdo de tabelas, mensagens de feedback. Humanista e altamente legível em tamanhos pequenos. Leitura confortável em telas por períodos prolongados.</p>
+    </div>
+    <div class="font-card">
+      <div class="font-tag">Dados / Monospaced</div>
+      <div class="font-amostra" style="font-family:'IBM Plex Mono',monospace; font-weight:400; color:#111827;">IBM Plex Mono</div>
+      <p class="font-uso">Números de série, timestamps, hashes, IDs de movimentação, logs de auditoria. Alinhamento fixo evita drift visual em tabelas de dados — o olho lê colunas numéricas com zero esforço.</p>
+    </div>
+  </div>
+
+  <div class="tipo-demo">
+    <div class="tipo-meta">HIERARQUIA COMPLETA · Aplicação em formulário de "Registrar Entrega"</div>
+
+    <p class="tipo-h1">Registrar Entrega de Cartão</p>
+    <div class="tipo-spec"><span>Space Grotesk · 32px · weight 600 · tracking -0.03em</span><span>Uso: título de página/modal</span></div>
+    <br><br>
+
+    <p class="tipo-h2">Dados do Beneficiário</p>
+    <div class="tipo-spec"><span>Space Grotesk · 22px · weight 500 · tracking -0.02em</span><span>Uso: título de seção dentro da tela</span></div>
+    <br><br>
+
+    <p class="tipo-h3">Informações do Cartão</p>
+    <div class="tipo-spec"><span>Space Grotesk · 16px · weight 600 · tracking -0.01em</span><span>Uso: sub-seção, label de grupo de campos</span></div>
+    <br><br>
+
+    <p class="tipo-body">O número de série deve ser localizado no verso do cartão, abaixo do código de barras. Este campo é obrigatório e será vinculado ao CPF do beneficiário selecionado acima.</p>
+    <div class="tipo-spec"><span>IBM Plex Sans · 14px · weight 400 · line-height 1.65</span><span>Uso: texto de instrução, conteúdo principal</span></div>
+    <br><br>
+
+    <p class="tipo-caption">Número de série · Criptografado conforme LGPD · Art. 46</p>
+    <div class="tipo-spec"><span>IBM Plex Sans · 12px · weight 400 · Cinza 500</span><span>Uso: label auxiliar, nota de conformidade</span></div>
+    <br><br>
+
+    <code class="tipo-mono">SN-2024-00847-BR · 2026-04-08 14:32:07 UTC-3</code>
+    <div class="tipo-spec" style="margin-top:6px;"><span>IBM Plex Mono · 13px · weight 400</span><span>Uso: números de série, timestamps em logs</span></div>
+  </div>
+</section>
+
+<!-- 3. ICONOGRAFIA -->
+<section class="section" id="icones">
+  <div class="section-label">03 · Diretrizes para Iconografia Própria</div>
+  <h2 class="section-title">Construção de ícones customizados</h2>
+  <p class="section-desc">Ícones são construídos sob um grid rigoroso para garantir consistência visual em toda a plataforma. Estilo: vazado (outline), cantos arredondados, traço uniforme. Sem ícones sólidos preenchidos — o estilo outline reduz peso visual em interfaces densas e mantém legibilidade em tamanhos pequenos.</p>
+
+  <div class="icone-regras">
+    <div class="regra-card">
+      <div class="regra-titulo">Grid Base</div>
+      <div class="regra-valor">24×24px</div>
+      <div class="regra-desc">Canvas de construção. Área de segurança interna: 20×20px. Nunca extrapolar a área de segurança.</div>
+    </div>
+    <div class="regra-card">
+      <div class="regra-titulo">Stroke Weight</div>
+      <div class="regra-valor">1.5px</div>
+      <div class="regra-desc">Traço único em toda a biblioteca. Não misturar 1px e 2px no mesmo conjunto.</div>
+    </div>
+    <div class="regra-card">
+      <div class="regra-titulo">Cantos (Corner)</div>
+      <div class="regra-valor">Round</div>
+      <div class="regra-desc">stroke-linecap: round · stroke-linejoin: round. Cria percepção de amigabilidade técnica, não fria.</div>
+    </div>
+    <div class="regra-card">
+      <div class="regra-titulo">Estilo</div>
+      <div class="regra-valor">Outline</div>
+      <div class="regra-desc">Sempre vazado. Preenchimento apenas em estados de erro crítico ou status de alerta para máximo destaque semântico.</div>
+    </div>
+    <div class="regra-card">
+      <div class="regra-titulo">Pixel Snap</div>
+      <div class="regra-valor">Obrigatório</div>
+      <div class="regra-desc">Linhas horizontais e verticais devem alinhar ao pixel. Evita blur em resoluções 1x.</div>
+    </div>
+    <div class="regra-card">
+      <div class="regra-titulo">Cor Padrão</div>
+      <div class="regra-valor">currentColor</div>
+      <div class="regra-desc">Ícones herdam a cor do texto pai. Nunca hardcode de cor no SVG — facilita estados hover e temas.</div>
+    </div>
+  </div>
+
+  <div class="icone-grid">
+    <!-- Entregar Cartão -->
+    <div class="icone-card">
+      <div class="icone-svg-wrap">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="6" width="20" height="13" rx="2"/>
+          <path d="M2 10h20"/>
+          <path d="M14 16h4"/>
+          <path d="M9 19l-2-2 2-2"/>
+          <path d="M7 17h4"/>
+        </svg>
+      </div>
+      <div class="icone-nome">Entregar Cartão</div>
+      <div class="icone-metafora">Cartão com seta de saída para a direita. Modelo mental: cartão passando de mãos.</div>
+    </div>
+    <!-- Registrar Devolução -->
+    <div class="icone-card">
+      <div class="icone-svg-wrap">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="6" width="20" height="13" rx="2"/>
+          <path d="M2 10h20"/>
+          <path d="M10 16H6"/>
+          <path d="M15 19l2-2-2-2"/>
+          <path d="M17 17h-4"/>
+        </svg>
+      </div>
+      <div class="icone-nome">Registrar Devolução</div>
+      <div class="icone-metafora">Cartão com seta retornando para a esquerda. Espelho do ícone de entrega — cria associação imediata de inversão da operação.</div>
+    </div>
+    <!-- Consultar Status -->
+    <div class="icone-card">
+      <div class="icone-svg-wrap">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="11" cy="11" r="7"/>
+          <path d="M21 21l-4-4"/>
+          <path d="M11 8v3l2 2"/>
+        </svg>
+      </div>
+      <div class="icone-nome">Consultar Status</div>
+      <div class="icone-metafora">Lupa com relógio interno. Evoca busca no tempo — histórico + tempo real. Mais específico que lupa simples.</div>
+    </div>
+    <!-- Gerar Comprovante -->
+    <div class="icone-card">
+      <div class="icone-svg-wrap">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <path d="M14 2v6h6"/>
+          <path d="M9 15l2 2 4-4"/>
+        </svg>
+      </div>
+      <div class="icone-nome">Gerar Comprovante</div>
+      <div class="icone-metafora">Documento com check. O operador já usa "comprovante" como conceito mental — o check confirma que é o documento de confirmação, não apenas um arquivo.</div>
+    </div>
+    <!-- Criar Notificação -->
+    <div class="icone-card">
+      <div class="icone-svg-wrap">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+          <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          <path d="M19 3l1.5 1.5"/>
+          <path d="M19 6h2"/>
+          <path d="M21 4.5l-1.5 1.5"/>
+        </svg>
+      </div>
+      <div class="icone-nome">Criar Notificação</div>
+      <div class="icone-metafora">Sino com faísca de "novo". O sino é reconhecível como notificação; a faísca de criação diferencia de "ver notificações".</div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. UX WRITING -->
+<section class="section" id="uxwriting">
+  <div class="section-label">04 · Padrões de UX Writing</div>
+  <h2 class="section-title">Linguagem da interface e sistema de feedback</h2>
+  <p class="section-desc">A linguagem da interface deve refletir o domínio operacional do administrador. Termos técnicos do código não chegam à UI. Todo texto é claro, direto e nunca culpa o usuário.</p>
+
+  <h3 style="font-family:var(--fonte-heading);font-size:16px;font-weight:600;color:#374151;margin-bottom:16px;">Glossário Fechado da Interface</h3>
+  <table class="glossario-table">
+    <thead>
+      <tr>
+        <th>Termo Técnico (Código)</th>
+        <th>Evitar na UI</th>
+        <th>Usar na UI</th>
+        <th>Justificativa</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Beneficiario</td>
+        <td>Usuário / Cliente</td>
+        <td>Beneficiário</td>
+        <td>"Beneficiário" é o termo oficial do domínio de programas sociais. "Usuário" cria ambiguidade com o administrador do sistema. "Cliente" traz conotação comercial incorreta.</td>
+      </tr>
+      <tr>
+        <td>Administrador</td>
+        <td>Admin / User / Operador</td>
+        <td>Administrador</td>
+        <td>Mantém o vocabulário dos RF/RNF. Consistência entre documentação técnica e interface reduz curva de aprendizado.</td>
+      </tr>
+      <tr>
+        <td>Movimentacao</td>
+        <td>Transação / Evento / Log</td>
+        <td>Movimentação</td>
+        <td>"Transação" tem conotação financeira. "Movimentação" reflete o processo físico do cartão — mais preciso ao modelo mental do operador.</td>
+      </tr>
+      <tr>
+        <td>CartaoAuxilio</td>
+        <td>Card / Token / Item</td>
+        <td>Cartão</td>
+        <td>Terminologia familiar ao operador que lida com o objeto físico diariamente. Evita jargão técnico.</td>
+      </tr>
+      <tr>
+        <td>RegistroAuditoria</td>
+        <td>Log / Trace / Histórico</td>
+        <td>Registro de Auditoria</td>
+        <td>Mantém o peso institucional necessário. "Log" é jargão de TI invisível ao operador.</td>
+      </tr>
+      <tr>
+        <td>condicaoCartao</td>
+        <td>State / Flag / Bool</td>
+        <td>Condição do Cartão</td>
+        <td>Linguagem natural que qualquer operador entende sem treinamento adicional.</td>
+      </tr>
+      <tr>
+        <td>authDoisFatores</td>
+        <td>2FA / MFA / OTP</td>
+        <td>Verificação em dois passos</td>
+        <td>Familiar ao usuário de plataformas de e-mail/banco. Evita siglas que geram dúvida.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 style="font-family:var(--fonte-heading);font-size:16px;font-weight:600;color:#374151;margin:40px 0 16px;">Padrões de Escrita para Botões de Ação (CTAs)</h3>
+  <table class="cta-table">
+    <thead>
+      <tr>
+        <th>Operação (Diagrama de Classes)</th>
+        <th>Label do Botão</th>
+        <th>Preview</th>
+        <th>Regra de Escrita</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="font-family:var(--fonte-mono);font-size:12px;color:#374151;">registrarEntrega()</td>
+        <td style="font-size:13px;">Confirmar Entrega</td>
+        <td><span class="btn-preview">Confirmar Entrega</span></td>
+        <td style="font-size:12px;color:#6B7280;">Verbo de confirmação + substantivo do domínio. Evitar "Registrar" como verbo de botão — é jargão de sistema.</td>
+      </tr>
+      <tr>
+        <td style="font-family:var(--fonte-mono);font-size:12px;color:#374151;">registrarDevolucao()</td>
+        <td style="font-size:13px;">Confirmar Devolução</td>
+        <td><span class="btn-preview">Confirmar Devolução</span></td>
+        <td style="font-size:12px;color:#6B7280;">Mesmo padrão da entrega. Consistência reduz carga cognitiva em operações inversas.</td>
+      </tr>
+      <tr>
+        <td style="font-family:var(--fonte-mono);font-size:12px;color:#374151;">gerarRegistro()</td>
+        <td style="font-size:13px;">Gerar Comprovante PDF</td>
+        <td><span class="btn-preview">Gerar Comprovante PDF</span></td>
+        <td style="font-size:12px;color:#6B7280;">Verbo de ação + objeto + formato. Mencionar "PDF" define expectativa do resultado.</td>
+      </tr>
+      <tr>
+        <td style="font-family:var(--fonte-mono);font-size:12px;color:#374151;">transferirResponsabilidade()</td>
+        <td style="font-size:13px;">Transferir Cartão</td>
+        <td><span class="btn-preview ghost">Transferir Cartão</span></td>
+        <td style="font-size:12px;color:#6B7280;">Ação secundária — estilo ghost. "Responsabilidade" é jargão. O operador pensa em "transferir o cartão".</td>
+      </tr>
+      <tr>
+        <td style="font-family:var(--fonte-mono);font-size:12px;color:#374151;">criarNotificacao()</td>
+        <td style="font-size:13px;">Criar Notificação</td>
+        <td><span class="btn-preview">Criar Notificação</span></td>
+        <td style="font-size:12px;color:#6B7280;">"Criar" é aceito quando o objeto já é familiar (notificação). Diferente de "Configurar" — que sugere algo mais técnico.</td>
+      </tr>
+      <tr>
+        <td style="font-family:var(--fonte-mono);font-size:12px;color:#374151;">validarPreRequisitos() — falha</td>
+        <td style="font-size:13px;">Cancelar</td>
+        <td><span class="btn-preview danger">Cancelar Operação</span></td>
+        <td style="font-size:12px;color:#6B7280;">Ação destrutiva — tom de alerta suave. Nunca "Deletar" ou "Apagar" para operações de cancelamento.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 style="font-family:var(--fonte-heading);font-size:16px;font-weight:600;color:#374151;margin:40px 0 16px;">Mensagens de Feedback do Sistema</h3>
+  <p style="font-size:13px;color:#6B7280;margin-bottom:24px;">Baseadas nas Heurísticas de Nielsen #9 (ajudar a reconhecer, diagnosticar e recuperar-se de erros). Toda mensagem: (1) descreve o que aconteceu, (2) explica por quê, (3) oferece o próximo passo.</p>
+
+  <div class="feedback-stack">
+    <!-- ERRO 1 - Violação LGPD/duplicidade -->
+    <div class="feedback-msg fb-erro">
+      <svg class="fb-icone" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="10" cy="10" r="9" stroke="#991B1B" stroke-width="1.5"/>
+        <path d="M10 6v4" stroke="#991B1B" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="10" cy="14" r="0.75" fill="#991B1B"/>
+      </svg>
+      <div>
+        <div class="fb-titulo">Este cartão já está com outro beneficiário</div>
+        <div class="fb-corpo">
+          O cartão <code style="font-family:var(--fonte-mono);font-size:12px;background:rgba(0,0,0,0.06);padding:1px 5px;border-radius:2px;">SN-2024-00847-BR</code> está registrado como "Entregue" para <strong>Maria da Silva (CPF ···.456.···-89)</strong>. Não é possível registrar uma nova entrega sem antes confirmar a devolução do cartão atual — isso garante a unicidade de responsabilidade exigida pelo sistema.
+          <div class="fb-acao">Ver histórico de movimentações deste cartão →</div>
+        </div>
+        <div class="fb-heuristica">Heurística #9 aplicada: informa o estado atual, explica a regra de negócio (RF-05) e oferece a ação corretiva sem jargão técnico.</div>
+      </div>
+    </div>
+
+    <!-- ERRO 2 - Falha de validação de devolução -->
+    <div class="feedback-msg fb-alerta">
+      <svg class="fb-icone" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 3L18 17H2L10 3Z" stroke="#92400E" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M10 9v3" stroke="#92400E" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="10" cy="14" r="0.75" fill="#92400E"/>
+      </svg>
+      <div>
+        <div class="fb-titulo">Não foi possível registrar a devolução</div>
+        <div class="fb-corpo">
+          O cartão <code style="font-family:var(--fonte-mono);font-size:12px;background:rgba(0,0,0,0.06);padding:1px 5px;border-radius:2px;">SN-2024-00201-BR</code> está com o status <strong>"Disponível"</strong> — ele não foi entregue a nenhum beneficiário, portanto não há devolução a registrar. Verifique o número de série e tente novamente.
+          <div class="fb-acao">Consultar status do cartão →</div>
+        </div>
+        <div class="fb-heuristica">Heurística #9 aplicada: exibe o status atual do cartão, explica a regra (RF-02 — validar pré-entrega), sugere a ação de verificação sem culpar o operador.</div>
+      </div>
+    </div>
+
+    <!-- SUCESSO - Entrega confirmada -->
+    <div class="feedback-msg fb-sucesso">
+      <svg class="fb-icone" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="10" cy="10" r="9" stroke="#166534" stroke-width="1.5"/>
+        <path d="M6.5 10.5l2.5 2.5 4.5-5" stroke="#166534" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div>
+        <div class="fb-titulo">Entrega confirmada com sucesso</div>
+        <div class="fb-corpo">
+          O cartão <code style="font-family:var(--fonte-mono);font-size:12px;background:rgba(0,0,0,0.06);padding:1px 5px;border-radius:2px;">SN-2024-01053-BR</code> foi entregue a <strong>João Carlos Pereira</strong> em <code style="font-family:var(--fonte-mono);font-size:12px;background:rgba(0,0,0,0.06);padding:1px 5px;border-radius:2px;">08/04/2026 às 14:32</code>. O registro de auditoria foi gerado automaticamente.
+          <div class="fb-acao">Gerar comprovante PDF desta entrega →</div>
+        </div>
+        <div class="fb-heuristica">Heurística #1 (visibilidade do status) + #9: confirma o que ocorreu com dados concretos, menciona o log automático (RNF-05) e oferece o próximo passo natural do fluxo.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="guide-footer">
+  <div>Sistema de Gestão e Rastreabilidade de Cartões de Auxílio</div>
+  <div>Kit de Marca v1.0 · <span>Gerado em Abril 2026</span> · Aplicar a partir da Sprint 1</div>
+</footer>
+
+</body>
+</html>

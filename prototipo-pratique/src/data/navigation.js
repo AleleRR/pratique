@@ -2,16 +2,16 @@
  * Navigation items configuration for sidebar and mobile bar.
  */
 export const navItems = [
-    { key: "dashboard", icon: "🏠", label: "Dashboard" },
-    { key: "cartoes", icon: "🪪", label: "Cartões" },
-    { key: "entrega", icon: "📤", label: "Nova Entrega" },
-    { key: "devolucao", icon: "📥", label: "Devolução" },
-    { key: "beneficiarios", icon: "👥", label: "Beneficiários" },
-    { key: "relatorios", icon: "📊", label: "Relatórios" },
-    { key: "notificacoes", icon: "🔔", label: "Notificações" },
-    { key: "auditoria", icon: "📋", label: "Auditoria" },
-    { key: "configuracoes", icon: "⚙️", label: "Configurações" },
-    { key: "ajuda", icon: "❓", label: "Ajuda" },
+    { key: "dashboard",     icon: "dashboard",    label: "Dashboard" },
+    { key: "cartoes",       icon: "credit-card",  label: "Cartões" },
+    { key: "entrega",       icon: "card-deliver", label: "Nova Entrega" },
+    { key: "devolucao",     icon: "card-return",  label: "Devolução" },
+    { key: "beneficiarios", icon: "users",        label: "Beneficiários" },
+    { key: "relatorios",    icon: "chart",        label: "Relatórios" },
+    { key: "notificacoes",  icon: "bell",         label: "Notificações" },
+    { key: "auditoria",     icon: "audit",        label: "Auditoria" },
+    { key: "configuracoes", icon: "settings",     label: "Configurações" },
+    { key: "ajuda",         icon: "help",         label: "Ajuda" },
 ];
 
 /**

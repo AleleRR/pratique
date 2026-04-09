@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useAppContext } from "../context/AppContext";
 import { theme } from "../theme/theme";
+import { Icon, Bell, Settings, Smartphone } from "../components/Icons";
 
 /**
  * Notificacoes page: Notification center with mark-as-read via context.
@@ -69,12 +70,8 @@ export default function Notificacoes() {
     };
 
     const CanalIcon = ({ canal }) => {
-        const icons = {
-            whatsapp: "💬",
-            sms: "📱",
-            email: "📧"
-        };
-        return <span style={{ fontSize: 16 }}>{icons[canal] || "📌"}</span>;
+        const icons = { whatsapp: "message", sms: "phone", email: "mail" };
+        return <Icon name={icons[canal] || "bell"} size={16} />;
     };
 
     return (
@@ -104,7 +101,7 @@ export default function Notificacoes() {
             {activeTab === "sistema" && (
                 <>
                     <div className="panel">
-                        <div className="panel-header"><div className="panel-title">🔔 Central de Notificações</div></div>
+                        <div className="panel-header"><div className="panel-title" style={{ display:"flex", alignItems:"center", gap:6 }}><Bell size={15} />Central de Notificações</div></div>
                         <div className="panel-body" style={{ paddingTop: 8, paddingBottom: 8 }}>
                             {state.notificacoes.length === 0 && (
                                 <div className="text-muted" style={{ textAlign: "center", padding: 24 }}>Nenhuma notificação.</div>
@@ -116,7 +113,7 @@ export default function Notificacoes() {
                                     onClick={() => n.unread && handleMarkRead(n.id)}
                                     style={{ cursor: n.unread ? "pointer" : "default" }}
                                 >
-                                    <div className="notif-icon" style={{ fontSize: 24 }}>{n.icon}</div>
+                                    <div className="notif-icon" style={{ fontSize: 24 }}><Icon name={n.icon} size={20} /></div>
                                     <div style={{ flex: 1 }}>
                                         <div className="notif-text">{n.texto}</div>
                                         <div className="notif-meta">{n.meta}</div>
@@ -128,7 +125,7 @@ export default function Notificacoes() {
                     </div>
 
                     <div className="panel" style={{ marginTop: 16 }}>
-                        <div className="panel-header"><div className="panel-title">⚙️ Configurar Alertas</div></div>
+                        <div className="panel-header"><div className="panel-title" style={{ display:"flex", alignItems:"center", gap:6 }}><Settings size={15} />Configurar Alertas</div></div>
                         <div className="panel-body">
                             {ALERT_SETTINGS.map((item, i) => (
                                 <div key={i} style={{ display: "flex", alignItems: "center", gap: 12, padding: "12px 0", borderBottom: i < ALERT_SETTINGS.length - 1 ? `1px solid ${theme.border}` : "none" }}>
@@ -149,7 +146,7 @@ export default function Notificacoes() {
             {activeTab === "beneficiarios" && (
                  <div className="panel">
                     <div className="panel-header">
-                        <div className="panel-title">📱 Histórico de Comunicação a Beneficiários</div>
+                        <div className="panel-title" style={{ display:"flex", alignItems:"center", gap:6 }}><Smartphone size={15} />Histórico de Comunicação a Beneficiários</div>
                     </div>
                     <div className="panel-body" style={{ padding: 0, overflowX: "auto" }}>
                         <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "left" }}>

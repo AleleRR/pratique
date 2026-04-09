@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { theme } from "../theme/theme";
 import { Modal } from "../components";
+import { UserCircle, KeyRound, Bell, Mail, Smartphone, Monitor, Keyboard, Lock } from "../components/Icons";
 
 /**
  * Configuracoes page: Profile, security (2FA), notification prefs, system info, keyboard shortcuts.
@@ -66,12 +67,12 @@ export default function Configuracoes() {
             <div className="grid-2">
                 {/* Profile */}
                 <div className="panel">
-                    <div className="panel-header"><div className="panel-title">👤 Perfil do Usuário</div></div>
+                    <div className="panel-header"><div className="panel-title" style={{ display:"flex", alignItems:"center", gap:6 }}><UserCircle size={15} />Perfil do Usuário</div></div>
                     <div className="panel-body">
                         <div style={{ display: "flex", gap: 16, alignItems: "center", marginBottom: 20 }}>
                             <div style={{
                                 width: 56, height: 56, borderRadius: "50%",
-                                background: `linear-gradient(135deg, ${theme.accent}, #A855F7)`,
+                                background: `linear-gradient(135deg, var(--color-brand-deep), var(--color-brand-action))`,
                                 display: "flex", alignItems: "center", justifyContent: "center",
                                 fontSize: 20, fontWeight: 700, color: "white",
                             }}>
@@ -97,7 +98,7 @@ export default function Configuracoes() {
 
                 {/* Security */}
                 <div className="panel">
-                    <div className="panel-header"><div className="panel-title">🔐 Segurança</div></div>
+                    <div className="panel-header"><div className="panel-title" style={{ display:"flex", alignItems:"center", gap:6 }}><KeyRound size={15} />Segurança</div></div>
                     <div className="panel-body">
                         <div style={{ display: "flex", alignItems: "center", gap: 12, padding: "12px 0", borderBottom: `1px solid ${theme.border}` }}>
                             <div style={{ flex: 1 }}>
@@ -135,14 +136,14 @@ export default function Configuracoes() {
 
             {/* Notification Preferences Grid */}
             <div className="panel" style={{ marginTop: 16 }}>
-                <div className="panel-header"><div className="panel-title">🔔 Preferências de Notificação</div></div>
+                <div className="panel-header"><div className="panel-title" style={{ display:"flex", alignItems:"center", gap:6 }}><Bell size={15} />Preferências de Notificação</div></div>
                 <div style={{ overflowX: "auto" }}>
                     <table className="table">
                         <thead>
                             <tr>
                                 <th style={{ paddingLeft: 20 }}>Evento</th>
-                                <th style={{ textAlign: "center" }}>📧 E-mail</th>
-                                <th style={{ textAlign: "center", paddingRight: 20 }}>📱 SMS</th>
+                                <th style={{ textAlign: "center" }}><span style={{ display:"inline-flex", alignItems:"center", gap:4 }}><Mail size={12} />E-mail</span></th>
+                                <th style={{ textAlign: "center", paddingRight: 20 }}><span style={{ display:"inline-flex", alignItems:"center", gap:4 }}><Smartphone size={12} />SMS</span></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -177,7 +178,7 @@ export default function Configuracoes() {
             <div className="grid-2" style={{ marginTop: 16 }}>
                 {/* System Info */}
                 <div className="panel">
-                    <div className="panel-header"><div className="panel-title">🖥️ Informações do Sistema</div></div>
+                    <div className="panel-header"><div className="panel-title" style={{ display:"flex", alignItems:"center", gap:6 }}><Monitor size={15} />Informações do Sistema</div></div>
                     <div className="panel-body">
                         {[
                             ["Versão", "1.0.0"],
@@ -210,7 +211,7 @@ export default function Configuracoes() {
 
                 {/* Keyboard Shortcuts */}
                 <div className="panel">
-                    <div className="panel-header"><div className="panel-title">⌨️ Atalhos do Teclado</div></div>
+                    <div className="panel-header"><div className="panel-title" style={{ display:"flex", alignItems:"center", gap:6 }}><Keyboard size={15} />Atalhos do Teclado</div></div>
                     <div className="panel-body">
                         {SHORTCUTS.map(s => (
                             <div key={s.keys} style={{ display: "flex", alignItems: "center", gap: 12, padding: "8px 0", borderBottom: `1px solid ${theme.border}` }}>
@@ -230,7 +231,7 @@ export default function Configuracoes() {
 
             {/* 2FA Setup Modal */}
             {show2FAModal && (
-                <Modal title="🔐 Configurar 2FA" onClose={() => setShow2FAModal(false)}
+                <Modal title="Configurar 2FA" onClose={() => setShow2FAModal(false)}
                     footer={
                         <>
                             <button className="btn btn-ghost" onClick={() => setShow2FAModal(false)} aria-label="Cancelar 2FA">Cancelar</button>

@@ -10,3 +10,4 @@ export { default as OnboardingTour } from "./OnboardingTour";
 export { SkeletonText, SkeletonCard, SkeletonTable, SkeletonStat, SkeletonLoader } from "./Skeleton";
 export { ToastContainer } from "./Toast";
 export { GlobalSearch } from "./GlobalSearch";
+export { Icon } from "./Icons";

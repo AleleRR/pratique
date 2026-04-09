@@ -1,15 +1,16 @@
 import { useAppContext } from "../context/AppContext";
 import { theme } from "../theme/theme";
+import { Icon } from "../components/Icons";
 
 /**
  * MobileBar: Bottom tab bar for mobile viewports. Shows top 5 nav items.
  */
 const MOBILE_ITEMS = [
-    { key: "dashboard", icon: "🏠", label: "Home" },
-    { key: "cartoes", icon: "🪪", label: "Cartões" },
-    { key: "entrega", icon: "📤", label: "Entrega" },
-    { key: "notificacoes", icon: "🔔", label: "Alertas" },
-    { key: "configuracoes", icon: "⚙️", label: "Config" },
+    { key: "dashboard",    icon: "dashboard",    label: "Home" },
+    { key: "cartoes",      icon: "credit-card",  label: "Cartões" },
+    { key: "entrega",      icon: "card-deliver", label: "Entrega" },
+    { key: "notificacoes", icon: "bell",         label: "Alertas" },
+    { key: "configuracoes",icon: "settings",     label: "Config" },
 ];
 
 export default function MobileBar({ activePage, onNavigate }) {
@@ -28,7 +29,7 @@ export default function MobileBar({ activePage, onNavigate }) {
                     aria-label={item.label}
                 >
                     <div className="tab-icon" style={{ position: "relative" }}>
-                        {item.icon}
+                        <Icon name={item.icon} size={22} />
                         {item.key === "notificacoes" && unread > 0 && (
                             <span style={{
                                 position: "absolute", top: -4, right: -8,

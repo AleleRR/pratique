@@ -1,4 +1,5 @@
 import { theme } from "../theme/theme";
+import { HelpCircle, Mail, MessageSquare } from "../components/Icons";
 
 export default function Ajuda() {
     const FAQ = [
@@ -22,9 +23,11 @@ export default function Ajuda() {
 
     return (
         <div className="page" style={{ maxWidth: 800, margin: "0 auto" }}>
-            <div className="panel" style={{ marginBottom: 24, background: `linear-gradient(135deg, ${theme.card}, rgba(59,110,248,0.1))` }}>
+            <div className="panel" style={{ marginBottom: 24, background: `linear-gradient(135deg, ${theme.card}, var(--color-brand-subtle))` }}>
                 <div className="panel-body" style={{ textAlign: "center", padding: "40px 20px" }}>
-                    <div style={{ fontSize: 48, marginBottom: 16 }}>❓</div>
+                    <div style={{ marginBottom: 16, display:"flex", justifyContent:"center" }}>
+                        <HelpCircle size={52} strokeWidth={1.5} color="var(--color-brand-action)" aria-hidden="true" />
+                    </div>
                     <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 24, fontWeight: 700, marginBottom: 8 }}>Como podemos ajudar?</div>
                     <div style={{ color: theme.muted, fontSize: 13, maxWidth: 400, margin: "0 auto" }}>
                         Encontre respostas rápidas para as dúvidas mais comuns sobre o uso da plataforma AuxílioPay.
@@ -52,13 +55,13 @@ export default function Ajuda() {
 
             <div className="grid-2" style={{ marginTop: 24 }}>
                 <div className="panel" style={{ textAlign: "center", padding: 24 }}>
-                    <div style={{ fontSize: 24, marginBottom: 12 }}>📧</div>
+                <div style={{ fontSize: 24, marginBottom: 12, display:"flex", justifyContent:"center" }}><Mail size={28} strokeWidth={1.5} color="var(--color-brand-action)" /></div>
                     <div style={{ fontWeight: 600, marginBottom: 4 }}>Suporte por E-mail</div>
                     <div style={{ fontSize: 12, color: theme.muted, marginBottom: 12 }}>Retorno em até 24h úteis</div>
                     <button className="btn btn-ghost" style={{ width: "100%", justifyContent: "center" }}>suporte@auxiliopay.com.br</button>
                 </div>
                 <div className="panel" style={{ textAlign: "center", padding: 24 }}>
-                    <div style={{ fontSize: 24, marginBottom: 12 }}>💬</div>
+                <div style={{ fontSize: 24, marginBottom: 12, display:"flex", justifyContent:"center" }}><MessageSquare size={28} strokeWidth={1.5} color="var(--color-brand-action)" /></div>
                     <div style={{ fontWeight: 600, marginBottom: 4 }}>Chat em Tempo Real</div>
                     <div style={{ fontSize: 12, color: theme.muted, marginBottom: 12 }}>Atendimento imediato</div>
                     <button className="btn btn-primary" style={{ width: "100%", justifyContent: "center" }}>Iniciar Chat</button>

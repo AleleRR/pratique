@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useAppContext } from "../context/AppContext";
 import { theme } from "../theme/theme";
 import { Badge } from "../components";
+import { Search, AlertTriangle, PackageMinus, ClipboardList, CreditCard, CheckCircle2, XCircle, Sparkles, ThumbsUp, Lock, FileCheck } from "lucide-react";
 
 /**
  * Devolucao page: Return a delivered card with condition assessment.
@@ -105,7 +106,7 @@ export default function Devolucao() {
     return (
         <div className="page">
             <div className="search-box" style={{ display: "flex", width: "100%", marginBottom: 16 }}>
-                <span>🔍</span>
+                <span><Search size={14} color={theme.muted} /></span>
                 <input
                     placeholder="Buscar cartão entregue..."
                     value={busca}
@@ -116,14 +117,14 @@ export default function Devolucao() {
 
             {error && (
                 <div className="alert alert-warning" style={{ marginBottom: 16 }}>
-                    <div className="alert-icon">⚠️</div>
+                    <div className="alert-icon"><AlertTriangle size={15} /></div>
                     <div>{error}</div>
                 </div>
             )}
 
             <div className="panel" style={{ marginBottom: 16 }}>
                 <div className="panel-header">
-                    <div className="panel-title">📥 Selecionar Cartão Entregue ({entregues.length})</div>
+                    <div className="panel-title" style={{ display:"flex", alignItems:"center", gap:6 }}><PackageMinus size={15} />Selecionar Cartão Entregue ({entregues.length})</div>
                 </div>
                 <div className="panel-body" style={{ maxHeight: 300, overflowY: "auto" }}>
                     {entregues.length === 0 && (
@@ -142,7 +143,9 @@ export default function Devolucao() {
                             }}
                         >
                             <div className="flex items-center gap-2">
-                                <div style={{ fontSize: 18 }}>🪪</div>
+                                <div style={{ display:"flex", alignItems:"center", justifyContent:"center", width:26, height:26, color: theme.accent }}>
+                                <CreditCard size={18} strokeWidth={1.75} />
+                            </div>
                                 <div style={{ flex: 1 }}>
                                     <div className="font-bold" style={{ fontSize: 13 }}>{c.id} — {c.beneficiario}</div>
                                     <div className="text-muted">{c.numero} · {c.tipo} · {c.valor}</div>
@@ -157,7 +160,7 @@ export default function Devolucao() {
             {selected && (
                 <div className="panel">
                     <div className="panel-header">
-                        <div className="panel-title">📋 Condição e Confirmação</div>
+                        <div className="panel-title" style={{ display:"flex", alignItems:"center", gap:6 }}><ClipboardList size={15} />Condição e Confirmação</div>
                     </div>
                     <div className="panel-body">
                         <div className="form-group">
@@ -172,7 +175,7 @@ export default function Devolucao() {
                                         aria-label={`Condição: ${c}`}
                                         aria-pressed={condicao === c}
                                     >
-                                        {c === "Perdido" ? "❌ " : c === "Danificado" ? "⚠️ " : c === "Ótimo" ? "✨ " : "👍 "}
+                                        {c === "Perdido" ? <XCircle size={14} style={{marginRight:4}} /> : c === "Danificado" ? <AlertTriangle size={14} style={{marginRight:4}} /> : c === "Ótimo" ? <Sparkles size={14} style={{marginRight:4}} /> : <ThumbsUp size={14} style={{marginRight:4}} />}
                                         {c}
                                     </button>
                                 ))}
@@ -181,7 +184,7 @@ export default function Devolucao() {
 
                         {condicao === "Perdido" && (
                             <div className="alert alert-warning">
-                                <div className="alert-icon">⚠️</div>
+                                <div className="alert-icon"><AlertTriangle size={15} /></div>
                                 <div>Cartão marcado como <strong>Perdido</strong> será automaticamente <strong>bloqueado</strong>.</div>
                             </div>
                         )}
@@ -207,7 +210,7 @@ export default function Devolucao() {
                             disabled={!condicao}
                             aria-label="Confirmar devolução"
                         >
-                            ✅ Confirmar Devolução
+                            <CheckCircle2 size={15} style={{ marginRight: 6 }} />Confirmar Devolução
                         </button>
                     </div>
                 </div>
@@ -221,7 +224,7 @@ function ReceiptSVG({ data }) {
     return (
         <div className="panel" style={{ maxWidth: 440, margin: "0 auto" }}>
             <div className="panel-header">
-                <div className="panel-title">📄 Comprovante de Devolução</div>
+                    <div className="panel-title" style={{ display:"flex", alignItems:"center", gap:6 }}><FileCheck size={15} />Comprovante de Devolução</div>
             </div>
             <div className="panel-body" style={{ padding: 0 }}>
                 <svg viewBox="0 0 400 320" width="100%" style={{ display: "block" }}>
@@ -242,12 +245,12 @@ function ReceiptSVG({ data }) {
                         ["Data/Hora", data.data],
                     ].map(([label, value], i) => (
                         <g key={i}>
-                            <text x="40" y={88 + i * 26} fill={theme.muted} fontSize="10" fontFamily="DM Sans, sans-serif">{label}</text>
-                            <text x="360" y={88 + i * 26} textAnchor="end" fill={theme.text} fontSize="11" fontWeight="600" fontFamily="DM Sans, sans-serif">{value}</text>
+                            <text x="40" y={88 + i * 26} fill={theme.muted} fontSize="10" fontFamily="IBM Plex Sans, sans-serif">{label}</text>
+                            <text x="360" y={88 + i * 26} textAnchor="end" fill={theme.text} fontSize="11" fontWeight="600" fontFamily="IBM Plex Sans, sans-serif">{value}</text>
                         </g>
                     ))}
                     <line x1="40" y1="268" x2="360" y2="268" stroke={theme.border} strokeWidth="1" />
-                    <text x="200" y="288" textAnchor="middle" fill={theme.muted} fontSize="9" fontFamily="DM Sans, sans-serif">AuxílioPay · Documento gerado automaticamente · AES-256</text>
+                    <text x="200" y="288" textAnchor="middle" fill={theme.muted} fontSize="9" fontFamily="IBM Plex Mono, monospace">AuxílioPay · Documento gerado automaticamente · AES-256</text>
                 </svg>
             </div>
         </div>

@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { useAppContext } from "../context/AppContext";
 import { theme } from "../theme/theme";
 import { EmptyState } from "../components";
+import { ClipboardList, Search, AlertTriangle, Lock, Download, ShieldCheck } from "../components/Icons";
 
 /**
  * Auditoria page: Expandable rows with JSON payload, operation + date filters, risk score.
@@ -47,7 +48,7 @@ export default function Auditoria() {
     return (
         <div className="page">
             <div className="alert alert-warning mb-4">
-                <div className="alert-icon">🔒</div>
+                <div className="alert-icon"><Lock size={15} /></div>
                 <div>Logs de auditoria retidos por <strong>2 anos</strong> conforme LGPD. Acesso apenas para administradores.</div>
             </div>
 
@@ -64,17 +65,17 @@ export default function Auditoria() {
             {/* Stats */}
             <div className="stats-grid" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
                 <div className="stat-card blue">
-                    <div className="stat-icon">📋</div>
+                    <div className="stat-icon"><ClipboardList size={22} strokeWidth={1.75} /></div>
                     <div className="stat-value">{state.auditoria.length}</div>
                     <div className="stat-label">Total de registros</div>
                 </div>
                 <div className="stat-card green">
-                    <div className="stat-icon">🔍</div>
+                    <div className="stat-icon"><Search size={22} strokeWidth={1.75} /></div>
                     <div className="stat-value">98,4%</div>
                     <div className="stat-label">Integridade dos dados</div>
                 </div>
                 <div className="stat-card amber">
-                    <div className="stat-icon">⚠️</div>
+                    <div className="stat-icon"><AlertTriangle size={22} strokeWidth={1.75} /></div>
                     <div className="stat-value">{state.auditoria.filter(e => getRiskScore(e).level === "high").length}</div>
                     <div className="stat-label">Alertas de risco</div>
                 </div>
@@ -83,8 +84,8 @@ export default function Auditoria() {
             {/* Table */}
             <div className="panel">
                 <div className="panel-header">
-                    <div className="panel-title">📋 Log de Auditoria ({filtrados.length})</div>
-                    <button className="btn btn-primary btn-sm" aria-label="Exportar auditoria CSV">📥 Exportar CSV</button>
+                    <div className="panel-title" style={{ display:"flex", alignItems:"center", gap:6 }}><ShieldCheck size={15} />Log de Auditoria ({filtrados.length})</div>
+                    <button className="btn btn-primary btn-sm" aria-label="Exportar auditoria CSV"><Download size={13} style={{marginRight:4}}/>Exportar CSV</button>
                 </div>
                 <div style={{ overflowX: "auto" }}>
                     <table className="table">
@@ -109,7 +110,7 @@ export default function Auditoria() {
                         </tbody>
                     </table>
                     {filtrados.length === 0 && (
-                        <EmptyState icon="📋" title="Nenhum registro" description="Nenhuma entrada de auditoria no período selecionado." />
+                        <EmptyState icon="audit" title="Nenhum registro" description="Nenhuma entrada de auditoria no período selecionado." />
                     )}
                 </div>
             </div>
