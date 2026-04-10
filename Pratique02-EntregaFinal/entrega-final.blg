@@ -1,0 +1,9 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is 'entrega-final.blg'
+[134] biber-MSWIN64:342> INFO - === 
+[176] Biber.pm:421> INFO - Reading 'entrega-final.bcf'
+[310] Biber.pm:1002> INFO - Found 0 citekeys in bib section 0
+[327] bbl.pm:676> INFO - Writing 'entrega-final.bbl' with encoding 'UTF-8'
+[327] bbl.pm:779> INFO - Output to entrega-final.bbl
+[327] Biber.pm:132> WARN - The file 'entrega-final.bcf' does not contain any citations!
+[327] Biber.pm:134> INFO - WARNINGS: 1
