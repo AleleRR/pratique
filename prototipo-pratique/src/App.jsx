@@ -3,7 +3,7 @@ import { AppProvider } from "./context/AppContext";
 import { styles } from "./theme/styles";
 import { pageTitles } from "./data";
 import { Sidebar, Topbar, MobileBar } from "./layout";
-import { ToastContainer, GlobalSearch, OnboardingTour } from "./components";
+import { ToastContainer, GlobalSearch } from "./components";
 import {
     Dashboard, Cartoes, NovaEntrega, Devolucao,
     Beneficiarios, Relatorios, Notificacoes, Auditoria, Configuracoes, Ajuda
@@ -78,7 +78,6 @@ function AppContent() {
 
             <ToastContainer />
             <GlobalSearch isOpen={searchOpen} onClose={() => setSearchOpen(false)} onNavigate={(p) => setPage(p)} />
-            <OnboardingTour />
         </>
     );
 }
