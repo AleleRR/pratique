@@ -1,11 +1,11 @@
 # Fdb version 4
-["biber entrega-final"] 1775842969.9759 "entrega-final.bcf" "entrega-final.bbl" "entrega-final" 1775842972.28026 0
-  "entrega-final.bcf" 1775842969 112208 97bc740da232e45c54546f004076d2ca "pdflatex"
+["biber entrega-final"] 1775842969.9759 "entrega-final.bcf" "entrega-final.bbl" "entrega-final" 1775850276.03148 0
+  "entrega-final.bcf" 1775850275 112208 97bc740da232e45c54546f004076d2ca "pdflatex"
   (generated)
   "entrega-final.bbl"
   "entrega-final.blg"
   (rewritten before read)
-["pdflatex"] 1775842965.14933 "c:/Users/Usuario/pratique/Pratique02-EntregaFinal/entrega-final.tex" "entrega-final.pdf" "entrega-final" 1775842972.28065 0
+["pdflatex"] 1775850271.20916 "c:/Users/Usuario/pratique/Pratique02-EntregaFinal/entrega-final.tex" "entrega-final.pdf" "entrega-final" 1775850276.03235 0
   "C:/Users/Usuario/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1775841937 301457 03c289f5240ea9c025ec0dac8ebd5911 ""
   "C:/Users/Usuario/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1774382807 13334817 f640efbb55ae83c2b39cac6a1bb86b0a ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/fontawesome/fontawesomeone.enc" 1463869852 1687 f004baecce60175c6453d0e3f808cf20 ""
@@ -200,11 +200,11 @@
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty" 1693735632 123 a302f2c651a95033260db60e51527ae8 ""
   "C:/Users/Usuario/AppData/Local/Programs/MiKTeX/tex/latex/yafoot/fnpos.sty" 1536067238 3552 ffa6a47ef8edd0d65a39b6fbb4525e81 ""
   "abnt-num-brkt.cbx" 1775841415 11665 0f55425dfc560a6e753902b520074db9 ""
-  "c:/Users/Usuario/pratique/Pratique02-EntregaFinal/entrega-final.tex" 1775842948 25471 a6b572e14cf1b36f77cc094cf9dddc9e ""
-  "entrega-final.aux" 1775842969 9879 64bb2101e0bedf2765aa3a6651ea7e2d "pdflatex"
+  "c:/Users/Usuario/pratique/Pratique02-EntregaFinal/entrega-final.tex" 1775850265 25959 e70f9c0a4368e30ab5494cf9168c0584 ""
+  "entrega-final.aux" 1775850275 9881 c926eb47147a3fe6bc806766f4caecf3 "pdflatex"
   "entrega-final.bbl" 1775842972 486 76d65a242ec496c9b4361af646ff12cb "biber entrega-final"
-  "entrega-final.run.xml" 1775842969 2578 3a77e17bf2614ea669a18f85ae758502 "pdflatex"
-  "entrega-final.tex" 1775842948 25471 a6b572e14cf1b36f77cc094cf9dddc9e ""
+  "entrega-final.run.xml" 1775850275 2578 3a77e17bf2614ea669a18f85ae758502 "pdflatex"
+  "entrega-final.tex" 1775850265 25959 e70f9c0a4368e30ab5494cf9168c0584 ""
   "imagens/DiagramaCasoDeUso.png" 1775841415 65548 67cab98452ce75fd72af5e0bf9a419b2 ""
   "imagens/DiagramaDeClasses.png" 1775841415 74025 a89938536504cd8cb27ede473c0f6a7e ""
   "imagens/ModeloER.png" 1775842426 1831639 84b2d386b81238fba99ee899d28bd23e ""
