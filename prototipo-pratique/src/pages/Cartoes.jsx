@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import { useAppContext } from "../context/AppContext";
 import { theme } from "../theme/theme";
 import { Badge, StatusTracker, Modal, EmptyState } from "../components";
-import { Search, CreditCard, Eye, XCircle, FileCheck, History, PackagePlus, PackageMinus } from "../components/Icons";
+import { Search, CreditCard, Eye, XCircle, FileCheck, History, PackagePlus, PackageMinus, Plus } from "../components/Icons";
 
 /**
  * Cartoes page: Card inventory with sorting, pagination, quick actions,
@@ -18,6 +18,18 @@ const DETAIL_FIELDS = [
     { key: "Responsável", accessor: c => c.responsavel || "—" },
     { key: "Data de Entrega", accessor: c => c.entregaEm || "—" },
 ];
+
+const BENEFIT_TYPES = ["Alimentação", "Transporte", "Saúde", "Educação"];
+const ADD_CARD_INITIAL = { numero4: "", tipo: "Alimentação", valor: "" };
+
+function validateNumero4(v) {
+    return /^\d{4}$/.test(v.trim());
+}
+
+function validateValor(v) {
+    const s = v.trim().replace(/^R\$\s?/, "");
+    return /^\d+([,\.]\d{1,2})?$/.test(s);
+}
 
 function filterCartoes(list, busca, filtroStatus) {
     const q = busca.toLowerCase();
@@ -37,6 +49,25 @@ export default function Cartoes() {
     const [sortDir, setSortDir] = useState("asc");
     const [page, setPage] = useState(0);
     const [actionsOpen, setActionsOpen] = useState(null);
+    const [addCartaoOpen, setAddCartaoOpen] = useState(false);
+    const [addForm, setAddForm] = useState(ADD_CARD_INITIAL);
+    const [addErrors, setAddErrors] = useState({});
+
+    const handleAddCard = () => {
+        const errors = {};
+        if (!validateNumero4(addForm.numero4)) errors.numero4 = "Informe os 4 últimos dígitos (apenas números).";
+        if (!addForm.valor.trim()) errors.valor = "Informe o valor do cartão.";
+        else if (!validateValor(addForm.valor)) errors.valor = "Formato inválido. Ex: R$ 350,00";
+        if (Object.keys(errors).length) { setAddErrors(errors); return; }
+        const valorFormatado = addForm.valor.trim().startsWith("R$")
+            ? addForm.valor.trim()
+            : `R$ ${addForm.valor.trim()}`;
+        dispatch({ type: "ADD_CARD", payload: { numero4: addForm.numero4.trim(), tipo: addForm.tipo, valor: valorFormatado } });
+        addToast("success", "Cartão cadastrado com sucesso!");
+        setAddCartaoOpen(false);
+        setAddForm(ADD_CARD_INITIAL);
+        setAddErrors({});
+    };
 
     const filtrados = useMemo(() => {
         let list = filterCartoes(state.cartoes, busca, filtro);
@@ -97,6 +128,14 @@ export default function Cartoes() {
             <div className="panel">
                 <div className="panel-header">
                     <div className="panel-title" style={{ display:"flex", alignItems:"center", gap:6 }}><CreditCard size={15} />Cartões ({filtrados.length})</div>
+                    <button
+                        className="btn btn-primary btn-sm"
+                        onClick={() => { setAddForm(ADD_CARD_INITIAL); setAddErrors({}); setAddCartaoOpen(true); }}
+                        aria-label="Adicionar cartão"
+                        style={{ display:"flex", alignItems:"center", gap:6 }}
+                    >
+                        <Plus size={13} />Adicionar Cartão
+                    </button>
                 </div>
                 <div style={{ overflowX: "auto" }}>
                     <table className="table" style={{ padding: "0 20px" }}>
@@ -159,6 +198,67 @@ export default function Cartoes() {
                     </div>
                 )}
             </div>
+
+            {/* Add Card Modal */}
+            {addCartaoOpen && (
+                <Modal
+                    title="Adicionar Cartão"
+                    onClose={() => setAddCartaoOpen(false)}
+                    footer={
+                        <>
+                            <button className="btn btn-ghost" onClick={() => setAddCartaoOpen(false)}>Cancelar</button>
+                            <button className="btn btn-primary" onClick={handleAddCard} aria-label="Salvar cartão" style={{ display:"flex", alignItems:"center", gap:6 }}>
+                                <Plus size={13} />Salvar Cartão
+                            </button>
+                        </>
+                    }
+                >
+                    <div className="form-group">
+                        <label className="form-label" htmlFor="add-numero4">Últimos 4 dígitos do cartão</label>
+                        <input
+                            id="add-numero4"
+                            className="form-control"
+                            placeholder="ex: 1234"
+                            maxLength={4}
+                            value={addForm.numero4}
+                            onChange={e => setAddForm(f => ({ ...f, numero4: e.target.value.replace(/\D/g, "") }))}
+                            aria-label="Últimos 4 dígitos"
+                            style={addErrors.numero4 ? { borderColor: theme.danger } : {}}
+                        />
+                        {addErrors.numero4 && <div style={{ color: theme.danger, fontSize: 11, marginTop: 4 }}>{addErrors.numero4}</div>}
+                    </div>
+                    <div className="form-row">
+                        <div className="form-group">
+                            <label className="form-label" htmlFor="add-tipo">Tipo de Benefício</label>
+                            <select
+                                id="add-tipo"
+                                className="form-control"
+                                value={addForm.tipo}
+                                onChange={e => setAddForm(f => ({ ...f, tipo: e.target.value }))}
+                                aria-label="Tipo de benefício"
+                            >
+                                {BENEFIT_TYPES.map(t => <option key={t}>{t}</option>)}
+                            </select>
+                        </div>
+                        <div className="form-group">
+                            <label className="form-label" htmlFor="add-valor">Valor</label>
+                            <input
+                                id="add-valor"
+                                className="form-control"
+                                placeholder="ex: R$ 350,00"
+                                value={addForm.valor}
+                                onChange={e => setAddForm(f => ({ ...f, valor: e.target.value }))}
+                                aria-label="Valor do cartão"
+                                style={addErrors.valor ? { borderColor: theme.danger } : {}}
+                            />
+                            {addErrors.valor && <div style={{ color: theme.danger, fontSize: 11, marginTop: 4 }}>{addErrors.valor}</div>}
+                        </div>
+                    </div>
+                    <div style={{ background: theme.subtle, borderRadius: 10, padding: "12px 16px", border: `1px solid ${theme.border}`, marginTop: 4 }}>
+                        <div className="text-muted" style={{ fontSize: 12 }}>O cartão será cadastrado com status <strong>Disponível</strong> e ficará disponível para entrega imediatamente.</div>
+                    </div>
+                </Modal>
+            )}
 
             {/* Detail Modal with Card History */}
             {selected && (

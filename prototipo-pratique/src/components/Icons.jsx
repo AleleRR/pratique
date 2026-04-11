@@ -142,5 +142,5 @@ export {
     Clock, Archive, Activity, TrendingUp, ShieldAlert, ClipboardList,
     RefreshCw, History, KeyRound, FileCheck, ScanLine, Fingerprint,
     UserCheck, AlertCircle, DatabaseZap, Boxes, Building2, Send,
-    Monitor, Keyboard, Eye,
+    Monitor, Keyboard, Eye, Plus,
 };

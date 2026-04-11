@@ -25,6 +25,8 @@ let benId = 100;
 function nextBenId() { return `BEN-${String(++benId).padStart(3, "0")}`; }
 let nbenfId = 100;
 function nextNbenfId() { return `NBENF-${String(++nbenfId).padStart(3, "0")}`; }
+let carId = 24;
+function nextCarId() { return `CAR-${String(++carId).padStart(3, "0")}`; }
 
 function nowFormatted() {
     const d = new Date();
@@ -139,6 +141,29 @@ function appReducer(state, action) {
                 notificacoes: [
                     { id: nextNotId(), icon: "⛔", texto: `Cartão ${cartaoId} bloqueado — ${motivo}`, meta: `Sistema • agora`, unread: true },
                     ...state.notificacoes,
+                ],
+            };
+        }
+
+        case "ADD_CARD": {
+            const { numero4, tipo, valor } = action.payload;
+            const newCard = {
+                id: nextCarId(),
+                numero: `**** **** **** ${numero4}`,
+                beneficiario: "—",
+                cpf: "—",
+                status: "disponivel",
+                entregaEm: null,
+                responsavel: null,
+                valor,
+                tipo,
+            };
+            return {
+                ...state,
+                cartoes: [...state.cartoes, newCard],
+                auditoria: [
+                    { ts: nowTs(), op: "CADASTRO", user: "Admin João", ent: newCard.id, ip: "192.168.1.45", payload: { tipo, valor } },
+                    ...state.auditoria,
                 ],
             };
         }
